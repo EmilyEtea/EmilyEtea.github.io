@@ -1,0 +1,295 @@
+/* ==========================================================================
+   Emily Etea — portfolio
+   Design language: a persistent terminal window. Every section is headed
+   by a real shell command relevant to its content instead of a generic
+   label. One accent color (amber), one quiet secondary (teal, links only).
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #0b0e14;
+  --bg-panel: #10141c;
+  --bg-panel-alt: #141924;
+  --border: #232938;
+  --border-soft: #1a2030;
+  --text: #c9d1d9;
+  --text-dim: #7b8496;
+  --text-faint: #4b5162;
+  --accent: #e8a33d;
+  --accent-soft: rgba(232, 163, 61, 0.12);
+  --link: #5fb3b3;
+  --link-hover: #82cccc;
+  --dot-a: #e0645f;
+  --dot-b: #e8a33d;
+  --dot-c: #4fb477;
+  --radius: 5px;
+  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --maxw: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+a:hover,
+a:focus-visible {
+  border-bottom-color: var(--link);
+}
+a:focus-visible {
+  outline: 1px dashed var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---- terminal chrome ---------------------------------------------- */
+
+.term {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.term-window {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-panel);
+  overflow: hidden;
+}
+
+.term-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 16px;
+  background: var(--bg-panel-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.term-dots { display: flex; gap: 7px; }
+.term-dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.term-dots .a { background: var(--dot-a); }
+.term-dots .b { background: var(--dot-b); }
+.term-dots .c { background: var(--dot-c); }
+
+.term-title {
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+/* nav styled as shell commands */
+.term-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 4px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+.term-nav a {
+  color: var(--text-dim);
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  border-bottom: 1px solid transparent;
+}
+.term-nav a::before {
+  content: "$ ";
+  color: var(--text-faint);
+}
+.term-nav a:hover {
+  color: var(--text);
+  border-color: var(--border);
+}
+.term-nav a[aria-current="page"] {
+  color: var(--accent);
+  border-color: var(--border);
+  background: var(--accent-soft);
+}
+.term-nav a[aria-current="page"]::before {
+  color: var(--accent);
+}
+
+.term-body {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 44px 20px 56px;
+}
+
+/* ---- command / output blocks --------------------------------------- */
+
+.cmd {
+  color: var(--text-dim);
+  font-size: 13.5px;
+  margin: 0 0 10px;
+}
+.cmd .prompt { color: var(--accent); }
+.cmd .path { color: var(--link); }
+
+.cmd-block { margin: 0 0 48px; }
+.cmd-block:last-child { margin-bottom: 0; }
+
+.hero-line {
+  font-size: 15px;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .cursor { animation: none; }
+}
+
+h1, h2, h3 {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+  margin: 0 0 14px;
+}
+h1 { font-size: 26px; }
+h2 { font-size: 19px; }
+h3 { font-size: 15.5px; color: var(--accent); }
+
+p { margin: 0 0 16px; color: var(--text); }
+p.dim { color: var(--text-dim); }
+
+ul.plain { list-style: none; margin: 0; padding: 0; }
+ul.plain li {
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 8px;
+  color: var(--text-dim);
+}
+ul.plain li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+}
+
+/* ---- chips / tags ---------------------------------------------------- */
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 0; }
+.chip {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px 9px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* ---- buttons ----------------------------------------------------------- */
+
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.btn {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 9px 14px;
+  background: var(--bg-panel-alt);
+}
+.btn::before { content: "[ "; color: var(--text-faint); }
+.btn::after { content: " ]"; color: var(--text-faint); }
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+.btn.primary { color: var(--accent); border-color: var(--border); }
+
+/* ---- panels (highlights, project cards) --------------------------------- */
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  background: var(--bg-panel-alt);
+}
+.panel:last-child { margin-bottom: 0; }
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.panel-head .name { color: var(--accent); font-weight: 600; font-size: 15px; }
+.panel-head .meta { color: var(--text-faint); font-size: 12.5px; }
+
+/* ---- timeline / experience entries --------------------------------------- */
+
+.entry { padding-left: 16px; border-left: 2px solid var(--border); margin-bottom: 28px; }
+.entry:last-child { margin-bottom: 0; }
+.entry-head { margin-bottom: 6px; }
+.entry-title { color: var(--text); font-weight: 600; font-size: 15px; }
+.entry-org { color: var(--link); }
+.entry-date { color: var(--text-faint); font-size: 12.5px; display: block; margin-top: 2px; }
+
+/* ---- skills matrix --------------------------------------------------------- */
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 28px;
+}
+.skill-grid dt { color: var(--text-faint); font-size: 12px; margin-bottom: 6px; }
+.skill-grid dd { margin: 0; }
+
+/* ---- footer ------------------------------------------------------------------ */
+
+.term-footer {
+  border-top: 1px solid var(--border);
+  padding: 18px 20px;
+  background: var(--bg-panel-alt);
+}
+.term-footer .cmd { margin-bottom: 4px; }
+.term-footer .status { color: var(--text-dim); font-size: 13.5px; margin: 0 0 10px; }
+.term-footer .links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+
+/* ---- responsive ----------------------------------------------------------- */
+
+@media (max-width: 620px) {
+  .skill-grid { grid-template-columns: 1fr; }
+  .term-body { padding: 32px 16px 44px; }
+  h1 { font-size: 22px; }
+}
