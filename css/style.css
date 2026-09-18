@@ -18,6 +18,7 @@
   --text-faint: #4b5162;
   --accent: #e8a33d;
   --accent-soft: rgba(232, 163, 61, 0.12);
+  --accent-glow: rgba(232, 163, 61, 0.18);
   --link: #5fb3b3;
   --link-hover: #82cccc;
   --dot-a: #e0645f;
@@ -26,6 +27,7 @@
   --radius: 5px;
   --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
   --maxw: 760px;
+  --transition: 160ms ease;
 }
 
 * { box-sizing: border-box; }
@@ -51,6 +53,7 @@ a {
   color: var(--link);
   text-decoration: none;
   border-bottom: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
 }
 a:hover,
 a:focus-visible {
@@ -59,6 +62,45 @@ a:focus-visible {
 a:focus-visible {
   outline: 1px dashed var(--accent);
   outline-offset: 3px;
+}
+
+/* ---- social links (icon-only, tooltip on hover) ------------------------- */
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  background: transparent;
+  position: relative;
+  transition: color var(--transition), border-color var(--transition),
+              background var(--transition), box-shadow var(--transition);
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  color: var(--link-hover);
+  border-color: var(--link);
+  background: rgba(95, 179, 179, 0.08);
+  box-shadow: 0 0 8px rgba(95, 179, 179, 0.15);
+  border-bottom: 1px solid var(--link);
+}
+
+/* hide the text label — icon only */
+.social-link span {
+  display: none;
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+  fill: currentColor;
 }
 
 /* ---- terminal chrome ---------------------------------------------- */
@@ -73,9 +115,11 @@ a:focus-visible {
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--bg-panel);
-  overflow: hidden;
+  overflow: visible;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
 }
 
+/* Re-clip the top corners on the titlebar so the rounded window edge still shows */
 .term-titlebar {
   display: flex;
   align-items: center;
@@ -83,6 +127,7 @@ a:focus-visible {
   padding: 11px 16px;
   background: var(--bg-panel-alt);
   border-bottom: 1px solid var(--border);
+  border-radius: 7px 7px 0 0;
 }
 
 .term-dots { display: flex; gap: 7px; }
@@ -91,14 +136,59 @@ a:focus-visible {
   height: 11px;
   border-radius: 50%;
   display: inline-block;
+  transition: filter var(--transition);
 }
+.term-dots span:hover { filter: brightness(1.3); }
 .term-dots .a { background: var(--dot-a); }
 .term-dots .b { background: var(--dot-b); }
 .term-dots .c { background: var(--dot-c); }
 
+/* Clickable title / logo in the titlebar */
 .term-title {
   font-size: 12.5px;
   color: var(--text-dim);
+}
+
+a.term-title {
+  border-bottom: none;
+  transition: color var(--transition);
+}
+a.term-title:hover,
+a.term-title:focus-visible {
+  color: var(--text);
+  border-bottom: none;
+}
+
+/* ---- title tooltip on hover -------------------------------------------- */
+/* Applied to nav links and the titlebar logo link */
+
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--bg-panel-alt);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 11.5px;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 140ms ease, transform 140ms ease;
+  z-index: 10;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* nav styled as shell commands */
@@ -117,14 +207,19 @@ a:focus-visible {
   border-radius: var(--radius);
   font-size: 13.5px;
   border-bottom: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
 }
 .term-nav a::before {
   content: "$ ";
   color: var(--text-faint);
+  transition: color var(--transition);
 }
 .term-nav a:hover {
   color: var(--text);
   border-color: var(--border);
+}
+.term-nav a:hover::before {
+  color: var(--text-dim);
 }
 .term-nav a[aria-current="page"] {
   color: var(--accent);
@@ -151,7 +246,17 @@ a:focus-visible {
 .cmd .prompt { color: var(--accent); }
 .cmd .path { color: var(--link); }
 
-.cmd-block { margin: 0 0 48px; }
+.cmd-block {
+  margin: 0 0 48px;
+  /* fade-in on scroll — JS sets .is-visible */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 380ms ease, transform 380ms ease;
+}
+.cmd-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 .cmd-block:last-child { margin-bottom: 0; }
 
 .hero-line {
@@ -172,6 +277,7 @@ a:focus-visible {
 @keyframes blink { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
   .cursor { animation: none; }
+  .cmd-block { opacity: 1; transform: none; transition: none; }
 }
 
 h1, h2, h3 {
@@ -211,6 +317,13 @@ ul.plain li::before {
   padding: 4px 9px;
   font-size: 13px;
   color: var(--text-dim);
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+  cursor: default;
+}
+.chip:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 /* ---- buttons ----------------------------------------------------------- */
@@ -224,15 +337,24 @@ ul.plain li::before {
   border-radius: var(--radius);
   padding: 9px 14px;
   background: var(--bg-panel-alt);
+  transition: color var(--transition), border-color var(--transition),
+              background var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
 }
 .btn::before { content: "[ "; color: var(--text-faint); }
-.btn::after { content: " ]"; color: var(--text-faint); }
+.btn::after  { content: " ]"; color: var(--text-faint); }
 .btn:hover {
   border-color: var(--accent);
   color: var(--accent);
   border-bottom: 1px solid var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 .btn.primary { color: var(--accent); border-color: var(--border); }
+.btn.primary:hover {
+  background: var(--accent-soft);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
 
 /* ---- panels (highlights, project cards) --------------------------------- */
 
@@ -242,8 +364,15 @@ ul.plain li::before {
   padding: 18px 20px;
   margin-bottom: 16px;
   background: var(--bg-panel-alt);
+  transition: border-color var(--transition), transform 180ms ease,
+              box-shadow 180ms ease;
 }
 .panel:last-child { margin-bottom: 0; }
+.panel:hover {
+  border-color: var(--border-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
 
 .panel-head {
   display: flex;
@@ -253,7 +382,20 @@ ul.plain li::before {
   flex-wrap: wrap;
   margin-bottom: 8px;
 }
-.panel-head .name { color: var(--accent); font-weight: 600; font-size: 15px; }
+.panel-head .name {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.panel-head .name svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
 .panel-head .meta { color: var(--text-faint); font-size: 12.5px; }
 
 /* ---- timeline / experience entries --------------------------------------- */
@@ -281,10 +423,56 @@ ul.plain li::before {
   border-top: 1px solid var(--border);
   padding: 18px 20px;
   background: var(--bg-panel-alt);
+  border-radius: 0 0 7px 7px;
+  overflow: visible;
 }
 .term-footer .cmd { margin-bottom: 4px; }
-.term-footer .status { color: var(--text-dim); font-size: 13.5px; margin: 0 0 10px; }
-.term-footer .links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+.term-footer .status {
+  color: var(--dot-c);
+  font-size: 13.5px;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.term-footer .status::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dot-c);
+  box-shadow: 0 0 6px var(--dot-c);
+  flex-shrink: 0;
+  animation: pulse 2.2s ease infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .term-footer .status::before { animation: none; }
+}
+
+.term-footer .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---- footer divider ---- */
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid var(--border-soft);
+  margin: 14px 0;
+}
+
+.footer-copy {
+  color: var(--text-faint);
+  font-size: 11.5px;
+  margin: 0;
+}
 
 /* ---- responsive ----------------------------------------------------------- */
 
@@ -292,4 +480,5 @@ ul.plain li::before {
   .skill-grid { grid-template-columns: 1fr; }
   .term-body { padding: 32px 16px 44px; }
   h1 { font-size: 22px; }
+  .term { margin: 16px auto; }
 }

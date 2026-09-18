@@ -12,30 +12,49 @@
   <div class="term-window">
     <div class="term-titlebar">
       <div class="term-dots"><span class="a"></span><span class="b"></span><span class="c"></span></div>
-      <div class="term-title">emily@portfolio: ~/contact</div>
+      <a class="term-title" href="index.html" data-tooltip="Go home">emily@portfolio: ~/contact</a>
     </div>
     <nav class="term-nav" aria-label="Primary">
-      <a href="index.html">whoami</a>
-      <a href="projects.html">ls projects/</a>
-      <a href="about.html">cat about.md</a>
-      <a href="contact.html" aria-current="page">mail --compose</a>
+      <a href="index.html" data-tooltip="Home">whoami</a>
+      <a href="projects.html" data-tooltip="Projects">ls projects/</a>
+      <a href="about.html" data-tooltip="About me">cat about.md</a>
+      <a href="contact.html" aria-current="page" data-tooltip="Get in touch">mail --compose</a>
     </nav>
 
     <div class="term-body">
 
       <section class="cmd-block">
         <p class="cmd"><span class="prompt">emily@portfolio</span>:<span class="path">~</span>$ mail --compose</p>
-        <p>Open to internship-to-full-time roles and freelance web or mobile work. The fastest way to reach me is email — I check it daily. Thanks! </p>
+        <p>Open to internship-to-full-time roles and freelance web or mobile work. The fastest way to reach me is email — I check it daily. Thanks!</p>
       </section>
 
       <section class="cmd-block">
         <div class="panel">
-          <div class="panel-head"><span class="name">email</span></div>
+          <div class="panel-head">
+            <span class="name">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+              email
+            </span>
+          </div>
           <p style="margin-bottom:0"><a href="mailto:emilyetea@hotmail.com">emilyetea@hotmail.com</a></p>
         </div>
         <div class="panel">
-          <div class="panel-head"><span class="name">github</span></div>
+          <div class="panel-head">
+            <span class="name">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.34-3.37-1.34-.45-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.05A9.34 9.34 0 0 1 12 6.8c.84 0 1.69.11 2.48.33 1.92-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.01 1.63 1.01 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
+              github
+            </span>
+          </div>
           <p style="margin-bottom:0"><a href="https://github.com/EmilyEtea" target="_blank" rel="noopener">github.com/EmilyEtea</a></p>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <span class="name">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.66h2.9v8.84H5.5V9.66Zm4.68 0h2.77v1.21h.04c.39-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.43v6.7h-2.9v-6.27c0-1.49-.03-3.41-2.08-3.41-2.08 0-2.4 1.62-2.4 3.3v6.38h-2.9V9.66Z"/></svg>
+              linkedin
+            </span>
+          </div>
+          <p style="margin-bottom:0"><a href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener">linkedin.com/in/emily-etea</a></p>
         </div>
         <div class="panel">
           <div class="panel-head"><span class="name">location</span></div>
@@ -45,16 +64,25 @@
 
     </div>
 
-    <div class="term-footer">
-      <p class="cmd" style="margin-bottom:4px"><span class="prompt">emily@portfolio</span>:<span class="path">~</span>$ echo $STATUS</p>
+    <footer class="term-footer">
+      <p class="cmd"><span class="prompt">emily@portfolio</span>:<span class="path">~</span>$ echo $STATUS</p>
       <p class="status">available for opportunities</p>
       <div class="links">
-        <a href="https://github.com/EmilyEtea">github.com/EmilyEtea</a>
-        <a href="https://www.linkedin.com/in/emily-etea">linkedin.com/Emily Etea</a>
-        <a href="mailto:emilyetea@hotmail.com">emilyetea@hotmail.com</a>
+        <a class="social-link" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.34-3.37-1.34-.45-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.05A9.34 9.34 0 0 1 12 6.8c.84 0 1.69.11 2.48.33 1.92-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.01 1.63 1.01 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+        <a class="social-link" href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener" aria-label="LinkedIn" data-tooltip="linkedin.com/in/emily-etea">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.66h2.9v8.84H5.5V9.66Zm4.68 0h2.77v1.21h.04c.39-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.43v6.7h-2.9v-6.27c0-1.49-.03-3.41-2.08-3.41-2.08 0-2.4 1.62-2.4 3.3v6.38h-2.9V9.66Z"/></svg>
+        </a>
+        <a class="social-link" href="mailto:emilyetea@hotmail.com" aria-label="Email" data-tooltip="emilyetea@hotmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+        </a>
       </div>
-    </div>
+      <hr class="footer-divider">
+      <p class="footer-copy">© 2026 Emily Etea · Silang, Cavite, Philippines</p>
+    </footer>
   </div>
 </div>
+<script src="js/script.js"></script>
 </body>
 </html>
