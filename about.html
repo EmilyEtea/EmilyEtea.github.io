@@ -1,106 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Emily Etea</title>
-<meta name="description" content="Background, skills, experience, and certifications for Emily Etea, IT graduate from UST.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Emily Etea</title>
+  <meta name="description" content="About Emily Etea — BSIT graduate, full-stack developer, certifications, skills, experience, and leadership.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="term">
-  <div class="term-window">
+<div class="page">
 
-    <div class="term-titlebar">
+  <header class="site-header">
+    <div class="header-inner">
       <div class="term-dots">
         <span class="a"></span><span class="b"></span><span class="c"></span>
       </div>
-      <a class="term-title" href="index.html" data-tooltip="Home">emily@portfolio:~/about</a>
+      <a class="site-brand" href="index.html">emily<span class="brand-at">@</span>portfolio</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰ menu</button>
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a href="index.html" data-tooltip="Home">whoami</a>
+        <a href="projects.html" data-tooltip="Projects">ls projects/</a>
+        <a href="about.html" aria-current="page" data-tooltip="About &amp; Skills">cat about.md</a>
+        <a href="contact.html" data-tooltip="Get in touch">mail --compose</a>
+      </nav>
     </div>
+  </header>
 
-    <nav class="term-nav" aria-label="Primary">
-      <a href="index.html" data-tooltip="Home">whoami</a>
-      <a href="projects.html" data-tooltip="Projects">ls projects/</a>
-      <a href="about.html" aria-current="page" data-tooltip="About &amp; Skills">cat about.md</a>
-      <a href="contact.html" data-tooltip="Get in touch">mail --compose</a>
-    </nav>
-
-    <div class="term-body">
-
-      <!-- ── About ────────────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">about</span><span class="dollar">$</span>
-          <span class="command">cat about.md</span>
-        </p>
-        <h1 style="margin-bottom:14px">About Me</h1>
-        <p>
-          I'm a BS Information Technology graduate from the University of Santo Tomas, majoring in
-          Web and Mobile Development. Over the past few years I've moved between project management
-          and hands-on development — leading small teams through the Agile SDLC while also writing
-          the code, across campus systems, café platforms, and enterprise HR tools.
-        </p>
-        <p>
-          I'm comfortable across the stack: JavaScript, PHP, C#, and SQL on the code side, plus a
-          working foundation in networking and cybersecurity from my CCNA coursework. I'm particularly
-          drawn to the intersection of good engineering and clear communication — translating stakeholder
-          needs into software that actually works. Quick to pick up new tools and technologies, with a
-          strong focus on problem-solving, documentation, and making technical concepts accessible.
-        </p>
-      </section>
-
-      <!-- ── Education ────────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">about</span><span class="dollar">$</span>
-          <span class="command">cat education.log</span>
-        </p>
-        <div class="timeline">
-          <div class="entry">
-            <div class="entry-title">BS Information Technology</div>
-            <div class="entry-org">Major in Web and Mobile Development · University of Santo Tomas</div>
-            <span class="entry-date">August 2022 – June 2026</span>
-            <div class="chips" style="margin-top:8px">
-              <span class="chip chip-honor">🏅 Dean's Lister, AY 2025–2026</span>
-            </div>
-          </div>
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">cat about.md</p>
+        <h1 class="section-title">About <span class="accent">Me</span></h1>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+        <div>
+          <p style="color:var(--text-muted);font-size:15px;line-height:1.85;margin-bottom:18px">I'm an IT graduate from the University of Santo Tomas who builds full-stack web systems and leads the teams behind them — gathering stakeholder requirements, writing the code, and seeing the project through to deployment and support.</p>
+          <p style="color:var(--text-muted);font-size:15px;line-height:1.85">I build for organizations where technology needs to solve a real operational problem. Whether that's streamlining payroll, securing a campus, or making a business system actually usable by the people running it.</p>
         </div>
-      </section>
-
-      <!-- ── Experience ───────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">about</span><span class="dollar">$</span>
-          <span class="command">cat experience.log</span>
-        </p>
-        <div class="timeline">
-          <div class="entry">
-            <div class="entry-title">IT Support Intern · Project Lead</div>
-            <div class="entry-org">PECCI Multipurpose Cooperative · Makati City, Philippines</div>
-            <span class="entry-date">February 2026 – June 2026</span>
-            <ul class="plain">
-              <li>Led a five-member team developing HRIS Payroll Module features over four months.</li>
-              <li>Developed and tested system features using C#, React/JavaScript, and Microsoft SQL Server.</li>
-              <li>Gathered requirements from stakeholders and translated business needs into system improvements.</li>
-              <li>Conducted structured testing and supported implementation, documentation, and maintenance.</li>
-              <li>Provided technical support and troubleshooting for hardware, software, and system-related issues.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── Skills ───────────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">about</span><span class="dollar">$</span>
-          <span class="command">cat skills.log</span>
-        </p>
-
-        <div class="skill-section">
-          <div class="skill-category">Web Development</div>
+        <div class="card accent-pink reveal">
+          <p class="cmd-label">emily@about$ cat education.log</p>
+          <p class="entry-title">BS Information Technology</p>
+          <p class="entry-org">Major in Web &amp; Mobile Development</p>
+          <p class="entry-org" style="color:var(--text-muted)">University of Santo Tomas</p>
+          <span class="entry-date">August 2022 – June 2026</span>
           <div class="chips">
-            <span class="chip">HTML / CSS</span>
+            <span class="chip chip-honor">🏅 Dean's Lister, AY 2025–2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">cat experience.log</p>
+        <h2 class="section-title">Experience</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="entry">
+          <p class="entry-title">IT Support Intern · Project Lead</p>
+          <p class="entry-org">PECCI Multipurpose Cooperative · Makati City, Philippines</p>
+          <span class="entry-date">February 2026 – June 2026</span>
+          <ul class="plain">
+            <li>Led a 5-member development team in building and enhancing HRIS Payroll Module features</li>
+            <li>Developed payroll computation and deduction tracking features using C#, React/JS, and Microsoft SQL Server</li>
+            <li>Gathered and documented requirements from cooperative management stakeholders</li>
+            <li>Translated requirements into functional specifications and system features</li>
+            <li>Conducted structured system testing and validated functionality against requirements</li>
+            <li>Produced technical documentation and provided support during deployment and post-launch</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">cat skills.log</p>
+        <h2 class="section-title">Tech <span class="accent">Stack</span></h2>
+        <p class="section-sub">Languages, frameworks, tools, and professional competencies from my resume and projects.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="card accent-pink reveal" style="padding:20px 22px">
+          <p class="skill-category">Web Development</p>
+          <div class="chips">
+            <span class="chip">HTML/CSS</span>
             <span class="chip">JavaScript</span>
             <span class="chip">PHP</span>
             <span class="chip">React.js</span>
@@ -110,27 +100,24 @@
             <span class="chip">Figma</span>
           </div>
         </div>
-
-        <div class="skill-section" style="margin-top:20px">
-          <div class="skill-category">Languages &amp; Frameworks</div>
+        <div class="card accent-cyan reveal" style="padding:20px 22px">
+          <p class="skill-category">Languages &amp; Frameworks</p>
           <div class="chips">
             <span class="chip">C#</span>
-            <span class="chip">.NET / ASP.NET</span>
+            <span class="chip">.NET/ASP.NET</span>
             <span class="chip">Java</span>
             <span class="chip">SQL</span>
           </div>
         </div>
-
-        <div class="skill-section" style="margin-top:20px">
-          <div class="skill-category">Databases</div>
+        <div class="card accent-lavender reveal" style="padding:20px 22px">
+          <p class="skill-category">Databases</p>
           <div class="chips">
             <span class="chip">Microsoft SQL Server (SSMS)</span>
             <span class="chip">MongoDB</span>
           </div>
         </div>
-
-        <div class="skill-section" style="margin-top:20px">
-          <div class="skill-category">Tools &amp; Platforms</div>
+        <div class="card accent-yellow reveal" style="padding:20px 22px">
+          <p class="skill-category">Tools &amp; Platforms</p>
           <div class="chips">
             <span class="chip">Git &amp; GitHub</span>
             <span class="chip">VS Code</span>
@@ -143,12 +130,11 @@
             <span class="chip">Google Cloud</span>
           </div>
         </div>
-
-        <div class="skill-section" style="margin-top:20px">
-          <div class="skill-category">Professional</div>
+        <div class="card accent-purple reveal" style="padding:20px 22px;grid-column:1/-1">
+          <p class="skill-category">Professional</p>
           <div class="chips">
             <span class="chip">System Testing &amp; Debugging</span>
-            <span class="chip">Scrum / Agile</span>
+            <span class="chip">Scrum/Agile</span>
             <span class="chip">UAT</span>
             <span class="chip">Technical Documentation</span>
             <span class="chip">Requirements Gathering</span>
@@ -157,126 +143,117 @@
             <span class="chip">Project Coordination</span>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- ── Certifications ───────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">about</span><span class="dollar">$</span>
-          <span class="command">ls certifications/ -l</span>
-        </p>
+  <!-- CERTIFICATIONS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">ls certifications/ -l</p>
+        <h2 class="section-title">Certifications</h2>
+      </div>
 
-        <!-- Networking & Security -->
-        <div class="cert-group-label">Networking &amp; Security</div>
-        <div class="cert-list">
-          <div class="cert-item">
-            <div class="cert-year">2025</div>
-            <div class="cert-name">CCNA: Enterprise Networking, Security &amp; Automation</div>
-            <div class="cert-issuer cert-issuer--cisco">Cisco</div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-year">2024</div>
-            <div class="cert-name">CCNA: Switching, Routing &amp; Wireless Essentials</div>
-            <div class="cert-issuer cert-issuer--cisco">Cisco</div>
-          </div>
+      <p class="cert-group-label">Networking &amp; Security</p>
+      <div class="cert-list reveal">
+        <div class="cert-item">
+          <span class="cert-year">2025</span>
+          <span class="cert-name">CCNA Enterprise Networking Security &amp; Automation</span>
+          <span class="cert-issuer cert-issuer--cisco">Cisco</span>
         </div>
-
-        <!-- Data Engineering -->
-        <div class="cert-group-label" style="margin-top:18px">Data Engineering</div>
-        <div class="cert-list">
-          <div class="cert-item">
-            <div class="cert-year">2026</div>
-            <div class="cert-name">Data Streaming Engineer – Apache Flink®</div>
-            <div class="cert-issuer cert-issuer--confluent">Confluent</div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-year">2026</div>
-            <div class="cert-name">Data Streaming Engineer Foundations</div>
-            <div class="cert-issuer cert-issuer--confluent">Confluent</div>
-          </div>
+        <div class="cert-item">
+          <span class="cert-year">2024</span>
+          <span class="cert-name">CCNA Switching Routing &amp; Wireless Essentials</span>
+          <span class="cert-issuer cert-issuer--cisco">Cisco</span>
         </div>
+      </div>
 
-        <!-- Cloud & AI -->
-        <div class="cert-group-label" style="margin-top:18px">Cloud &amp; AI</div>
-        <div class="cert-list">
-          <div class="cert-item">
-            <div class="cert-year">2026</div>
-            <div class="cert-name">Gemini Certified University Student</div>
-            <div class="cert-issuer cert-issuer--google">Google for Education</div>
-          </div>
+      <p class="cert-group-label" style="margin-top:28px">Data Engineering</p>
+      <div class="cert-list reveal">
+        <div class="cert-item">
+          <span class="cert-year">2026</span>
+          <span class="cert-name">Data Streaming Engineer – Apache Flink®</span>
+          <span class="cert-issuer cert-issuer--confluent">Confluent</span>
         </div>
-
-        <!-- wallet links -->
-        <div class="cert-wallets">
-          <p class="cert-wallets-label">See all badges &amp; credentials:</p>
-          <div class="btn-row" style="margin-top:0">
-            <a class="btn mint" href="https://www.credly.com/users/emily-etea/badges" target="_blank" rel="noopener">
-              <!-- Credly icon -->
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-              Credly Badges
-            </a>
-            <a class="btn" href="https://www.credential.net/profile/emily-etea/wallet" target="_blank" rel="noopener">
-              <!-- credential.net icon -->
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 6h-2.18c.07-.44.18-.88.18-1a3 3 0 0 0-6 0c0 .12.11.56.18 1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-8-2a1 1 0 0 1 1 1c0 .12-.11.56-.18 1h-1.64C11.11 5.56 11 5.12 11 5a1 1 0 0 1 1-1zm8 16H4V8h16v12z"/></svg>
-              Accredible Wallet
-            </a>
-          </div>
+        <div class="cert-item">
+          <span class="cert-year">2026</span>
+          <span class="cert-name">Data Streaming Engineer Foundations</span>
+          <span class="cert-issuer cert-issuer--confluent">Confluent</span>
         </div>
-      </section>
+      </div>
 
-      <!-- ── Leadership & Affiliations ────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">about</span><span class="dollar">$</span>
-          <span class="command">cat leadership.log</span>
-        </p>
-        <div class="timeline">
+      <p class="cert-group-label" style="margin-top:28px">Cloud &amp; AI</p>
+      <div class="cert-list reveal">
+        <div class="cert-item">
+          <span class="cert-year">2026</span>
+          <span class="cert-name">Gemini Certified University Student</span>
+          <span class="cert-issuer cert-issuer--google">Google for Education</span>
+        </div>
+      </div>
+
+      <div class="cert-wallets reveal">
+        <p class="cert-wallets-label">See all verified badges &amp; credentials:</p>
+        <div class="btn-row">
+          <a class="btn btn-wallet" href="https://www.credly.com/users/emily-etea/badges" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+            Credly Badges
+          </a>
+          <a class="btn btn-wallet" href="https://www.credential.net/profile/emily-etea/wallet" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93-2.67-1.14-5-4.43-5-7.93V7.18L12 5z"/></svg>
+            Accredible Wallet
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">cat leadership.log</p>
+        <h2 class="section-title">Leadership &amp; <span class="accent">Affiliations</span></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+        <div class="timeline reveal">
           <div class="entry">
-            <div class="entry-title">President</div>
-            <div class="entry-org">UST College of Information and Computing Sciences — Class Officers</div>
-            <span class="entry-date">2025 – 2026</span>
-          </div>
-          <div class="entry">
-            <div class="entry-title">Public Relations Officer</div>
-            <div class="entry-org">UST College of Information and Computing Sciences — Class Officers</div>
-            <span class="entry-date">2023 – 2024</span>
+            <p class="entry-title">President</p>
+            <p class="entry-org">UST CICS Student Council</p>
+            <span class="entry-date">2025–2026</span>
           </div>
           <div class="entry">
-            <div class="entry-title">Secretary</div>
-            <div class="entry-org">UST College of Information and Computing Sciences — Class Officers</div>
-            <span class="entry-date">2022 – 2023</span>
+            <p class="entry-title">Public Relations Officer</p>
+            <p class="entry-org">UST CICS Student Council</p>
+            <span class="entry-date">2023–2024</span>
+          </div>
+          <div class="entry">
+            <p class="entry-title">Secretary</p>
+            <p class="entry-org">UST CICS Student Council</p>
+            <span class="entry-date">2022–2023</span>
           </div>
         </div>
-
-        <div class="cert-group-label" style="margin-top:24px">Affiliations</div>
-        <div class="chips">
-          <span class="chip">Bosconian Thomasian Youth Movement</span>
-          <span class="chip">UST Golden Corps of Cadets, Muy Leal Unit</span>
-          <span class="chip">UST Honorary Corps of Lady Sponsors</span>
-          <span class="chip">Teatro Tomasino</span>
+        <div class="reveal">
+          <p class="skill-category">Affiliations</p>
+          <div class="chips" style="margin-bottom:20px">
+            <span class="chip">Bosconian Thomasian Youth Movement</span>
+            <span class="chip">UST Golden Corps of Cadets Muy Leal Unit</span>
+            <span class="chip">UST Honorary Corps of Lady Sponsors</span>
+            <span class="chip">Teatro Tomasino</span>
+          </div>
+          <p class="skill-category">Languages</p>
+          <div class="chips">
+            <span class="chip">Filipino — native</span>
+            <span class="chip">English — professional</span>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- ── Languages ────────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">about</span><span class="dollar">$</span>
-          <span class="command">locale --list</span>
-        </p>
-        <div class="chips">
-          <span class="chip">Filipino — native</span>
-          <span class="chip">English — professional</span>
-        </div>
-      </section>
-
-    </div><!-- /term-body -->
-
-    <footer class="term-footer">
-      <p class="cmd">
-        <span class="prompt">emily</span><span class="sep">@</span><span class="path">portfolio</span><span class="dollar">$</span>
-        <span class="command">echo $STATUS</span>
-      </p>
-      <p class="footer-status">available for entry-level opportunities</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p class="footer-status-row">available for entry-level opportunities</p></div>
       <div class="footer-links">
         <a class="social-link" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.34-3.37-1.34-.45-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.05A9.34 9.34 0 0 1 12 6.8c.84 0 1.69.11 2.48.33 1.92-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.01 1.63 1.01 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
@@ -288,11 +265,13 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
         </a>
       </div>
-      <hr class="footer-divider">
-      <p class="footer-copy">© 2026 Emily Etea · Silang, Cavite, Philippines</p>
-    </footer>
+      <div class="footer-copy">
+        <span>© 2026 Emily Etea · Silang, Cavite, Philippines</span>
+        <span>Built by hand · Deployed on GitHub Pages</span>
+      </div>
+    </div>
+  </footer>
 
-  </div>
 </div>
 <script src="js/script.js"></script>
 </body>
