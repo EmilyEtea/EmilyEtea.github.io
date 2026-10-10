@@ -1,190 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Emily Etea</title>
-<meta name="description" content="Projects by Emily Etea — campus security systems, HRIS tools, café management platforms, and more.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Emily Etea</title>
+  <meta name="description" content="Emily Etea's portfolio projects — campus security, enterprise HR, café management, and waste management web systems.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="term">
-  <div class="term-window">
+<div class="page">
 
-    <div class="term-titlebar">
+  <header class="site-header">
+    <div class="header-inner">
       <div class="term-dots">
         <span class="a"></span><span class="b"></span><span class="c"></span>
       </div>
-      <a class="term-title" href="index.html" data-tooltip="Home">emily@portfolio:~/projects</a>
+      <a class="site-brand" href="index.html">emily<span class="brand-at">@</span>portfolio</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰ menu</button>
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a href="index.html" data-tooltip="Home">whoami</a>
+        <a href="projects.html" aria-current="page" data-tooltip="Projects">ls projects/</a>
+        <a href="about.html" data-tooltip="About &amp; Skills">cat about.md</a>
+        <a href="contact.html" data-tooltip="Get in touch">mail --compose</a>
+      </nav>
     </div>
+  </header>
 
-    <nav class="term-nav" aria-label="Primary">
-      <a href="index.html" data-tooltip="Home">whoami</a>
-      <a href="projects.html" aria-current="page" data-tooltip="Projects">ls projects/</a>
-      <a href="about.html" data-tooltip="About &amp; Skills">cat about.md</a>
-      <a href="contact.html" data-tooltip="Get in touch">mail --compose</a>
-    </nav>
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">ls ~/projects</p>
+        <h1 class="section-title"><span class="accent">Projects</span></h1>
+        <p class="section-sub">4 projects across campus security, enterprise HR, café management, and waste management. What each does, what I built, and how.</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="term-body">
+  <section class="section">
+    <div class="container">
+      <div class="projects-list">
 
-      <!-- ── Header ───────────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">portfolio</span><span class="dollar">$</span>
-          <span class="command">ls ~/projects -la</span>
-        </p>
-        <h1 style="margin-bottom:8px">Projects</h1>
-        <p style="margin-bottom:0">4 directories &nbsp;·&nbsp; roles across project management, QA, and full-stack development</p>
-      </section>
-
-      <!-- ── iVisit UST ────────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">projects</span><span class="dollar">$</span>
-          <span class="command">cat ivisit-ust/README.md</span>
-        </p>
-
-        <div class="panel pink">
-          <div class="panel-head">
-            <span class="name">
+        <div class="card accent-pink reveal">
+          <div class="project-number" aria-hidden="true">01</div>
+          <p class="cmd-label">emily@projects$ cat ivisit-ust/README.md</p>
+          <span class="pill pill-pink">Capstone · 2025–2026</span>
+          <div class="card-head">
+            <p class="card-title">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               iVisit UST
-            </span>
-            <span class="meta">2025 – 2026 · Capstone</span>
+            </p>
+            <span class="card-meta">Project Manager &amp; QA · Team of 4</span>
           </div>
-          <span class="panel-tag">Project Manager &amp; QA</span>
-          <p>
-            Campus entry and security monitoring system developed with the UST Campus Safety &amp; Security Office.
-            Combines OCR and RFID for visitor entry verification and real-time security monitoring.
-            Coordinated Agile sprints, managed cross-functional team tasks, gathered and validated stakeholder requirements,
-            and owned QA across <strong style="color:var(--text)">200+ test cases</strong> — from test planning through documentation.
-          </p>
-          <div class="chips" style="margin-bottom:16px">
+          <p class="project-what">What it does</p>
+          <p class="project-desc">A web-based campus entry and security monitoring system for UST. Uses OCR to read IDs and RFID for access verification — providing real-time visitor logging and security alerts for staff.</p>
+          <p class="project-what">What I worked on</p>
+          <ul class="worked-on">
+            <li>Led Agile sprint planning and team task coordination</li>
+            <li>Gathered and validated requirements with UST Campus Safety stakeholders</li>
+            <li>Owned QA end-to-end — designed and executed 200+ test cases</li>
+            <li>Maintained all testing documentation and UAT cycles</li>
+          </ul>
+          <div class="chips">
             <span class="chip">Java</span>
             <span class="chip">React.js</span>
             <span class="chip">OCR</span>
             <span class="chip">RFID</span>
-            <span class="chip">Agile / Scrum</span>
-            <span class="chip">QA</span>
+            <span class="chip">Agile/Scrum</span>
+            <span class="chip">UAT</span>
+            <span class="chip">QA Documentation</span>
           </div>
-          <div class="btn-row">
-            <a class="btn" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
+          <div class="btn-row" style="margin-top:18px">
+            <a class="btn btn-primary" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
           </div>
         </div>
-      </section>
 
-      <!-- ── PECCI HRIS ────────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">projects</span><span class="dollar">$</span>
-          <span class="command">cat pecci-hris/README.md</span>
-        </p>
-
-        <div class="panel lavender">
-          <div class="panel-head">
-            <span class="name">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L2 12h3v8h6v-5h2v5h6v-8h3L12 3z"/></svg>
-              PECCI HRIS
-            </span>
-            <span class="meta">2026 · Internship</span>
+        <div class="card accent-lavender reveal">
+          <div class="project-number" aria-hidden="true">02</div>
+          <p class="cmd-label">emily@projects$ cat pecci-hris/README.md</p>
+          <span class="pill pill-lavender">Internship · 2026</span>
+          <div class="card-head">
+            <p class="card-title">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              PECCI HRIS — Payroll Module
+            </p>
+            <span class="card-meta">Project Lead &amp; Developer · Team of 5</span>
           </div>
-          <span class="panel-tag">Project Lead &amp; Developer</span>
-          <p>
-            HRIS Payroll Module enhancements built during my IT internship at PECCI Multipurpose Cooperative.
-            Led a five-member development team through requirements gathering, feature development, testing,
-            and deployment. Translated business requirements from stakeholders into working system features
-            across payroll processing workflows.
-          </p>
-          <div class="chips" style="margin-bottom:16px">
+          <p class="project-what">What it does</p>
+          <p class="project-desc">Enterprise HRIS payroll module enhancements for PECCI Multipurpose Cooperative. Handles payroll computation, deduction tracking, and reporting — replacing manual processes that caused errors and delays.</p>
+          <p class="project-what">What I worked on</p>
+          <ul class="worked-on">
+            <li>Led 5-member dev team, coordinating tasks and timelines over 4 months</li>
+            <li>Developed Payroll Module features in C#, React/JS, and Microsoft SQL Server</li>
+            <li>Gathered requirements from stakeholders, translated into system features</li>
+            <li>Validated system functionality through structured testing</li>
+            <li>Produced technical documentation, supported deployment</li>
+          </ul>
+          <div class="chips">
             <span class="chip">C#</span>
-            <span class="chip">React / JavaScript</span>
+            <span class="chip">.NET/ASP.NET</span>
+            <span class="chip">React/JavaScript</span>
             <span class="chip">Microsoft SQL Server</span>
             <span class="chip">Team Lead</span>
-            <span class="chip">Stakeholder Comms</span>
+            <span class="chip">Requirements Gathering</span>
           </div>
-          <div class="btn-row">
-            <a class="btn" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
+          <div class="btn-row" style="margin-top:18px">
+            <a class="btn btn-cyan" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
           </div>
         </div>
-      </section>
 
-      <!-- ── DOS Coffee Connect ───────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">projects</span><span class="dollar">$</span>
-          <span class="command">cat dos-coffee-connect/README.md</span>
-        </p>
-
-        <div class="panel mint">
-          <div class="panel-head">
-            <span class="name">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21h18v-2H2v2zm2-4h14v-2H4v2zm0-4h14v-2H4v2zM20 3h-2V1h-2v2H8V1H6v2H4C2.9 3 2 3.9 2 5v3h20V5c0-1.1-.9-2-2-2z"/></svg>
+        <div class="card accent-cyan reveal">
+          <div class="project-number" aria-hidden="true">03</div>
+          <p class="cmd-label">emily@projects$ cat dos-coffee-connect/README.md</p>
+          <span class="pill pill-cyan">Software Engineering · 2025</span>
+          <div class="card-head">
+            <p class="card-title">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"/></svg>
               DOS Coffee Connect
-            </span>
-            <span class="meta">2025 · Software Engineering</span>
+            </p>
+            <span class="card-meta">Project Manager · Team of 8</span>
           </div>
-          <span class="panel-tag">Project Manager</span>
-          <p>
-            "Discover Delight Online" — a role-based café management web application built for a Software Engineering
-            course project. Coordinated an eight-member team, managed planning and milestones, translated business
-            requirements into system features with stakeholders, and oversaw QA, testing, and documentation through
-            to delivery.
-          </p>
-          <div class="chips" style="margin-bottom:16px">
+          <p class="project-what">What it does</p>
+          <p class="project-desc">A role-based café management web app — customers order, staff manage inventory, admins handle reporting. Built as a Software Engineering project with a full SDLC from requirements through UAT.</p>
+          <p class="project-what">What I worked on</p>
+          <ul class="worked-on">
+            <li>Coordinated 8-member team across planning, dev, testing, and delivery</li>
+            <li>Translated stakeholder requirements into user stories and system features</li>
+            <li>Managed sprint assignments and milestone tracking</li>
+            <li>Oversaw system testing, QA, and documentation</li>
+          </ul>
+          <div class="chips">
             <span class="chip">PHP</span>
             <span class="chip">JavaScript</span>
             <span class="chip">SQL</span>
-            <span class="chip">HTML / CSS</span>
+            <span class="chip">HTML/CSS</span>
             <span class="chip">UAT</span>
+            <span class="chip">Project Management</span>
           </div>
-          <div class="btn-row">
-            <a class="btn" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
+          <div class="btn-row" style="margin-top:18px">
+            <a class="btn btn-cyan" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
           </div>
         </div>
-      </section>
 
-      <!-- ── Trash to Treasure ────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">projects</span><span class="dollar">$</span>
-          <span class="command">cat trash-to-treasure/README.md</span>
-        </p>
-
-        <div class="panel">
-          <div class="panel-head">
-            <span class="name">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm1 15H11v-6h2v6zm0-8H11V7h2v2z"/></svg>
+        <div class="card accent-yellow reveal">
+          <div class="project-number" aria-hidden="true">04</div>
+          <p class="cmd-label">emily@projects$ cat trash-to-treasure/README.md</p>
+          <span class="pill pill-yellow">Full-Stack Developer · 2024</span>
+          <div class="card-head">
+            <p class="card-title">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
               Trash to Treasure
-            </span>
-            <span class="meta">2024 · Developer</span>
+            </p>
+            <span class="card-meta">Developer</span>
           </div>
-          <span class="panel-tag">Full-Stack Developer</span>
-          <p>
-            Web-based waste management and upcycling platform focused on encouraging responsible disposal
-            and creative reuse. Developed frontend and backend features, designed database interactions,
-            integrated backend services, and handled testing, debugging, and performance improvements.
-          </p>
-          <div class="chips" style="margin-bottom:16px">
+          <p class="project-what">What it does</p>
+          <p class="project-desc">A web platform connecting users around waste management and upcycling — browse recyclable materials, list items for reuse, discover upcycling guides. Makes responsible disposal social and accessible.</p>
+          <p class="project-what">What I worked on</p>
+          <ul class="worked-on">
+            <li>Built frontend and backend features across the full application stack</li>
+            <li>Designed database schema and data access patterns</li>
+            <li>Integrated backend services and REST API endpoints</li>
+            <li>Performed system testing, debugging, and performance improvements</li>
+          </ul>
+          <div class="chips">
             <span class="chip">JavaScript</span>
             <span class="chip">Node.js</span>
             <span class="chip">MongoDB</span>
             <span class="chip">REST APIs</span>
+            <span class="chip">Full-Stack</span>
           </div>
-          <div class="btn-row">
-            <a class="btn" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
+          <div class="btn-row" style="margin-top:18px">
+            <a class="btn btn-yellow" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
           </div>
         </div>
-      </section>
 
-    </div><!-- /term-body -->
+      </div>
+    </div>
+  </section>
 
-    <footer class="term-footer">
-      <p class="cmd">
-        <span class="prompt">emily</span><span class="sep">@</span><span class="path">portfolio</span><span class="dollar">$</span>
-        <span class="command">echo $STATUS</span>
-      </p>
-      <p class="footer-status">available for entry-level opportunities</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p class="footer-status-row">available for entry-level opportunities</p></div>
       <div class="footer-links">
         <a class="social-link" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.34-3.37-1.34-.45-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.05A9.34 9.34 0 0 1 12 6.8c.84 0 1.69.11 2.48.33 1.92-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.01 1.63 1.01 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
@@ -196,11 +192,13 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
         </a>
       </div>
-      <hr class="footer-divider">
-      <p class="footer-copy">© 2026 Emily Etea · Silang, Cavite, Philippines</p>
-    </footer>
+      <div class="footer-copy">
+        <span>© 2026 Emily Etea · Silang, Cavite, Philippines</span>
+        <span>Built by hand · Deployed on GitHub Pages</span>
+      </div>
+    </div>
+  </footer>
 
-  </div>
 </div>
 <script src="js/script.js"></script>
 </body>
