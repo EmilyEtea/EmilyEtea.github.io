@@ -3,70 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emily Etea — Web &amp; Mobile Developer</title>
-<meta name="description" content="Emily Etea, Web and Mobile Developer and BS Information Technology graduate from the University of Santo Tomas.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+<title>Emily Etea — IT Graduate &amp; Developer</title>
+<meta name="description" content="Emily Etea — IT graduate from UST, specializing in Web &amp; Mobile Development, Project Coordination, and QA.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="term">
   <div class="term-window">
+
+    <!-- titlebar -->
     <div class="term-titlebar">
-      <div class="term-dots"><span class="a"></span><span class="b"></span><span class="c"></span></div>
-      <a class="term-title" href="index.html" data-tooltip="Go home">emily@portfolio: ~</a>
+      <div class="term-dots">
+        <span class="a" title="close"></span>
+        <span class="b" title="minimise"></span>
+        <span class="c" title="maximise"></span>
+      </div>
+      <a class="term-title" href="index.html" data-tooltip="Home">emily@portfolio:~</a>
     </div>
+
+    <!-- nav -->
     <nav class="term-nav" aria-label="Primary">
       <a href="index.html" aria-current="page" data-tooltip="Home">whoami</a>
       <a href="projects.html" data-tooltip="Projects">ls projects/</a>
-      <a href="about.html" data-tooltip="About me">cat about.md</a>
+      <a href="about.html" data-tooltip="About &amp; Skills">cat about.md</a>
       <a href="contact.html" data-tooltip="Get in touch">mail --compose</a>
     </nav>
 
     <div class="term-body">
 
+      <!-- ── Hero ─────────────────────────────────────────── -->
       <section class="cmd-block">
-        <p class="cmd"><span class="prompt">emily@portfolio</span>:<span class="path">~</span>$ whoami</p>
-        <h1 data-typewriter>Emily Etea — Web &amp; Mobile Developer<span class="cursor" aria-hidden="true"></span></h1>
-        <p class="dim">BS Information Technology graduate, University of Santo Tomas (2026) · Silang, Cavite, Philippines</p>
-        <p>I build web and mobile applications end to end, from gathering requirements to shipping and supporting the finished product. My recent work includes a campus security system built with OCR and RFID, a payroll module for an HRIS platform, and a run of full-stack projects using React, Node.js, and SQL Server.</p>
+        <p class="cmd">
+          <span class="prompt">emily</span><span class="sep">@</span><span class="path">portfolio</span><span class="dollar">$</span>
+          <span class="command">whoami</span>
+        </p>
+
+        <p class="status-badge">available for opportunities</p>
+
+        <h1 class="hero-name" data-typewriter>Emily Etea<span class="cursor" aria-hidden="true"></span></h1>
+        <p class="hero-sub">IT Graduate · UST '26 · Silang, Cavite, Philippines</p>
+
+        <p class="hero-body">
+          BS Information Technology graduate (Web &amp; Mobile Development) with hands-on experience in
+          full-stack development, enterprise systems support, project coordination, and QA.
+          I've led teams, shipped features from requirements to deployment, and tested systems
+          end to end across campus platforms, HRIS tools, and web apps.
+        </p>
+
         <div class="btn-row">
           <a class="btn primary" href="projects.html">view projects</a>
+          <a class="btn mint" href="about.html">skills &amp; background</a>
           <a class="btn" href="contact.html">get in touch</a>
         </div>
       </section>
 
+      <!-- ── Highlights ───────────────────────────────────── -->
       <section class="cmd-block">
-        <p class="cmd"><span class="prompt">emily@portfolio</span>:<span class="path">~</span>$ ls highlights/</p>
-        <div class="panel">
-          <div class="panel-head"><span class="name">project-lead.log</span><span class="meta">PECCI Multipurpose Cooperative</span></div>
-          <p class="dim" style="margin-bottom:0">Led a five-member internship team building HRIS payroll enhancements — requirements gathering through deployment support.</p>
+        <p class="cmd">
+          <span class="prompt">emily</span><span class="sep">@</span><span class="path">portfolio</span><span class="dollar">$</span>
+          <span class="command">ls highlights/</span>
+        </p>
+
+        <div class="highlight-strip">
+          <div class="hs-icon">🏢</div>
+          <div>
+            <div class="hs-title">IT Support Intern → Project Lead</div>
+            <div class="hs-sub">PECCI Multipurpose Cooperative · Led a 5-member team building HRIS Payroll Module features in C#, React, and SQL Server.</div>
+          </div>
         </div>
-        <div class="panel">
-          <div class="panel-head"><span class="name">capstone.log</span><span class="meta">iVisit UST</span></div>
-          <p class="dim" style="margin-bottom:0">Project Manager &amp; QA on a campus entry and security monitoring system using OCR and RFID.</p>
+
+        <div class="highlight-strip">
+          <div class="hs-icon">🔎</div>
+          <div>
+            <div class="hs-title">Capstone: iVisit UST</div>
+            <div class="hs-sub">Campus Entry &amp; Security Monitoring System · Project Manager &amp; QA · 200+ test cases · OCR + RFID tech.</div>
+          </div>
         </div>
-        <div class="panel">
-          <div class="panel-head"><span class="name">certifications.log</span><span class="meta">Cisco</span></div>
-          <p class="dim" style="margin-bottom:0">CCNA certified in Switching, Routing &amp; Wireless Essentials, and in Enterprise Networking, Security &amp; Automation.</p>
+
+        <div class="highlight-strip">
+          <div class="hs-icon">🎓</div>
+          <div>
+            <div class="hs-title">Class President · UST CICS 2025–2026</div>
+            <div class="hs-sub">Led class officers and represented the college of Information and Computing Sciences.</div>
+          </div>
         </div>
       </section>
 
+      <!-- ── Quick Skills ─────────────────────────────────── -->
       <section class="cmd-block">
-        <p class="cmd"><span class="prompt">emily@portfolio</span>:<span class="path">~</span>$ ls skills/</p>
-        <div class="chips">
-          <span class="chip">C#</span><span class="chip">Java</span><span class="chip">JavaScript</span>
-          <span class="chip">PHP</span><span class="chip">SQL</span><span class="chip">React.js</span>
-          <span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">Microsoft SQL Server</span>
-          <span class="chip">Git &amp; GitHub</span><span class="chip">Figma</span><span class="chip">Android Studio</span>
+        <p class="cmd">
+          <span class="prompt">emily</span><span class="sep">@</span><span class="path">portfolio</span><span class="dollar">$</span>
+          <span class="command">ls skills/ --brief</span>
+        </p>
+
+        <div class="skill-section">
+          <div class="skill-category">Languages &amp; Frameworks</div>
+          <div class="chips">
+            <span class="chip">JavaScript</span>
+            <span class="chip">PHP</span>
+            <span class="chip">C#</span>
+            <span class="chip">.NET / ASP.NET</span>
+            <span class="chip">Java</span>
+            <span class="chip">React.js</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-section" style="margin-top:18px">
+          <div class="skill-category">Tools &amp; Professional</div>
+          <div class="chips">
+            <span class="chip">Git &amp; GitHub</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Jira</span>
+            <span class="chip">Trello</span>
+            <span class="chip">Selenium</span>
+            <span class="chip">Google Cloud</span>
+            <span class="chip">Agile / Scrum</span>
+            <span class="chip">Project Coordination</span>
+            <span class="chip">QA &amp; Testing</span>
+          </div>
         </div>
       </section>
 
-    </div>
+    </div><!-- /term-body -->
 
+    <!-- footer -->
     <footer class="term-footer">
-      <p class="cmd"><span class="prompt">emily@portfolio</span>:<span class="path">~</span>$ echo $STATUS</p>
-      <p class="status">available for opportunities</p>
-      <div class="links">
+      <p class="cmd">
+        <span class="prompt">emily</span><span class="sep">@</span><span class="path">portfolio</span><span class="dollar">$</span>
+        <span class="command">echo $STATUS</span>
+      </p>
+      <p class="footer-status">available for entry-level opportunities</p>
+      <div class="footer-links">
         <a class="social-link" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.34-3.37-1.34-.45-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.05A9.34 9.34 0 0 1 12 6.8c.84 0 1.69.11 2.48.33 1.92-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.01 1.63 1.01 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
         </a>
@@ -80,8 +150,9 @@
       <hr class="footer-divider">
       <p class="footer-copy">© 2026 Emily Etea · Silang, Cavite, Philippines</p>
     </footer>
-  </div>
-</div>
+
+  </div><!-- /term-window -->
+</div><!-- /term -->
 <script src="js/script.js"></script>
 </body>
 </html>
