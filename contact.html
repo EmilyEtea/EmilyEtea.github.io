@@ -1,130 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Emily Etea</title>
-<meta name="description" content="Get in touch with Emily Etea — open to entry-level IT and technology opportunities.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Emily Etea</title>
+  <meta name="description" content="Get in touch with Emily Etea — open to entry-level roles in development, QA, project coordination, and systems support.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="term">
-  <div class="term-window">
+<div class="page">
 
-    <div class="term-titlebar">
+  <header class="site-header">
+    <div class="header-inner">
       <div class="term-dots">
         <span class="a"></span><span class="b"></span><span class="c"></span>
       </div>
-      <a class="term-title" href="index.html" data-tooltip="Home">emily@portfolio:~/contact</a>
+      <a class="site-brand" href="index.html">emily<span class="brand-at">@</span>portfolio</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰ menu</button>
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a href="index.html" data-tooltip="Home">whoami</a>
+        <a href="projects.html" data-tooltip="Projects">ls projects/</a>
+        <a href="about.html" data-tooltip="About &amp; Skills">cat about.md</a>
+        <a href="contact.html" aria-current="page" data-tooltip="Get in touch">mail --compose</a>
+      </nav>
     </div>
+  </header>
 
-    <nav class="term-nav" aria-label="Primary">
-      <a href="index.html" data-tooltip="Home">whoami</a>
-      <a href="projects.html" data-tooltip="Projects">ls projects/</a>
-      <a href="about.html" data-tooltip="About &amp; Skills">cat about.md</a>
-      <a href="contact.html" aria-current="page" data-tooltip="Get in touch">mail --compose</a>
-    </nav>
+  <!-- PAGE HERO -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">mail --compose</p>
+        <h1 class="section-title">Let's <span class="accent">Connect</span></h1>
+        <p class="section-sub">Open to entry-level roles in development, QA, project coordination, and systems support. Email is fastest — I check it daily.</p>
+        <p class="hero-status" style="margin-top:16px;">available for opportunities</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="term-body">
+  <!-- CONTACT -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">cat contacts.json</p>
+        <h2 class="section-title">Reach Out</h2>
+      </div>
 
-      <!-- ── Header ───────────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">contact</span><span class="dollar">$</span>
-          <span class="command">mail --compose</span>
-        </p>
-        <h1 style="margin-bottom:10px">Let's Connect</h1>
-        <p style="max-width:520px">
-          Open to entry-level opportunities in IT and technology — development, project coordination, QA, or systems support.
-          Email is the fastest way to reach me; I check it every day.
-        </p>
-        <p class="status-badge" style="margin-top:16px">available for opportunities</p>
-      </section>
+      <div class="contact-layout">
+        <!-- LEFT: form -->
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name <span class="required">*</span></label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="e.g. John Santos" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <input class="form-input" type="text" id="subject" name="subject" placeholder="e.g. Job Opportunity" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message <span class="required">*</span></label>
+              <textarea class="form-textarea" id="message" name="message" rows="6" placeholder="Hi Emily, I saw your portfolio..." required></textarea>
+            </div>
+            <div class="btn-row">
+              <button type="submit" class="btn btn-primary">send message</button>
+            </div>
+          </form>
+          <p style="font-size:12px;color:var(--text-faint);margin-top:10px;">Opens your email client with a prefilled message.</p>
+        </div>
 
-      <!-- ── Contact cards ────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">contact</span><span class="dollar">$</span>
-          <span class="command">cat contacts.json</span>
-        </p>
-
-        <div class="contact-grid">
-
-          <div class="panel pink">
-            <div class="panel-head">
-              <span class="name">
+        <!-- RIGHT: contact info -->
+        <div class="contact-info">
+          <div class="card accent-pink reveal">
+            <div class="card-head">
+              <p class="card-title">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
                 Email
-              </span>
+              </p>
             </div>
-            <p style="font-size:13.5px;margin-bottom:0">
-              <a href="mailto:emilyetea@hotmail.com">emilyetea@hotmail.com</a>
-            </p>
+            <p><a href="mailto:emilyetea@hotmail.com">emilyetea@hotmail.com</a></p>
           </div>
 
-          <div class="panel lavender">
-            <div class="panel-head">
-              <span class="name">
+          <div class="card accent-lavender reveal" style="margin-top:16px">
+            <div class="card-head">
+              <p class="card-title">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.66h2.9v8.84H5.5V9.66Zm4.68 0h2.77v1.21h.04c.39-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.43v6.7h-2.9v-6.27c0-1.49-.03-3.41-2.08-3.41-2.08 0-2.4 1.62-2.4 3.3v6.38h-2.9V9.66Z"/></svg>
                 LinkedIn
-              </span>
+              </p>
             </div>
-            <p style="font-size:13.5px;margin-bottom:0">
-              <a href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener">linkedin.com/in/emily-etea</a>
-            </p>
+            <p><a href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener">linkedin.com/in/emily-etea</a></p>
           </div>
 
-          <div class="panel mint">
-            <div class="panel-head">
-              <span class="name">
+          <div class="card accent-cyan reveal" style="margin-top:16px">
+            <div class="card-head">
+              <p class="card-title">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.34-3.37-1.34-.45-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.05A9.34 9.34 0 0 1 12 6.8c.84 0 1.69.11 2.48.33 1.92-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.01 1.63 1.01 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
                 GitHub
-              </span>
+              </p>
             </div>
-            <p style="font-size:13.5px;margin-bottom:0">
-              <a href="https://github.com/EmilyEtea" target="_blank" rel="noopener">github.com/EmilyEtea</a>
-            </p>
+            <p><a href="https://github.com/EmilyEtea" target="_blank" rel="noopener">github.com/EmilyEtea</a></p>
           </div>
 
-          <div class="panel">
-            <div class="panel-head">
-              <span class="name">
+          <div class="card reveal" style="margin-top:16px">
+            <div class="card-head">
+              <p class="card-title">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 Location
-              </span>
+              </p>
             </div>
-            <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:0">
-              Silang, Cavite, Philippines<br>
-              <span style="color:var(--text-faint);font-size:12.5px">Open to remote &amp; on-site roles</span>
-            </p>
+            <p style="color:var(--text-muted)">Silang, Cavite, Philippines</p>
+            <span style="font-size:12px;color:var(--text-faint)">Open to remote &amp; on-site roles</span>
           </div>
-
         </div>
-      </section>
+      </div>
 
-      <!-- ── Quick note ────────────────────────────────────── -->
-      <section class="cmd-block">
-        <p class="cmd">
-          <span class="prompt">emily</span><span class="sep">@</span><span class="path">contact</span><span class="dollar">$</span>
-          <span class="command">cat note.txt</span>
-        </p>
-        <div class="panel" style="border-left:2px solid rgba(232,180,200,0.4)">
-          <p style="margin-bottom:0;font-size:13.5px">
-            Whether it's a full-time role, freelance project, or just a conversation — feel free to reach out.
-            I'm particularly interested in roles where I can grow across development, QA, and product work.
-          </p>
-        </div>
-      </section>
+      <div class="card reveal" style="margin-top:28px">
+        <p>Whether it's a full-time role, freelance project, or just a conversation — feel free to reach out. I'm particularly interested in roles where I can grow across development, QA, and product work.</p>
+      </div>
+    </div>
+  </section>
 
-    </div><!-- /term-body -->
-
-    <footer class="term-footer">
-      <p class="cmd">
-        <span class="prompt">emily</span><span class="sep">@</span><span class="path">portfolio</span><span class="dollar">$</span>
-        <span class="command">echo $STATUS</span>
-      </p>
-      <p class="footer-status">available for entry-level opportunities</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p class="footer-status-row">available for entry-level opportunities</p></div>
       <div class="footer-links">
         <a class="social-link" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.34-3.37-1.34-.45-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.05A9.34 9.34 0 0 1 12 6.8c.84 0 1.69.11 2.48.33 1.92-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.01 1.63 1.01 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
@@ -136,11 +135,13 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
         </a>
       </div>
-      <hr class="footer-divider">
-      <p class="footer-copy">© 2026 Emily Etea · Silang, Cavite, Philippines</p>
-    </footer>
+      <div class="footer-copy">
+        <span>© 2026 Emily Etea · Silang, Cavite, Philippines</span>
+        <span>Built by hand · Deployed on GitHub Pages</span>
+      </div>
+    </div>
+  </footer>
 
-  </div>
 </div>
 <script src="js/script.js"></script>
 </body>
