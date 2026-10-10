@@ -1155,3 +1155,229 @@ ul.plain li::before { content:'–'; position:absolute; left:0; color:var(--text
   .btn-row { flex-direction: column; }
   .btn-row .btn { width: 100%; justify-content: center; }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   FLIP CARD — hero terminal / photo
+   ════════════════════════════════════════════════════════════════════════ */
+
+.flip-card {
+  width: 260px;
+  height: 320px;
+  perspective: 900px;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  /* subtle idle glow */
+  filter: drop-shadow(0 0 14px rgba(255,45,120,0.18));
+  transition: filter 0.3s ease;
+}
+.flip-card:hover {
+  filter: drop-shadow(0 0 22px rgba(0,229,255,0.32));
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4,0,0.2,1);
+  border-radius: 10px;
+}
+
+/* hover flips the card */
+.flip-card:hover .flip-card-inner,
+.flip-card.is-locked .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* shared face styles */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* FRONT — terminal */
+.flip-card-front {
+  background: rgba(12,16,24,0.92);
+  border: 1px solid rgba(255,45,120,0.25);
+  padding: 20px 22px;
+  font-size: 12px;
+  line-height: 1.9;
+  box-shadow:
+    0 0 0 1px rgba(255,45,120,0.08) inset,
+    0 8px 32px rgba(0,0,0,0.6);
+}
+.flip-card-front .ht-line { margin-bottom: 2px; }
+.flip-card-front .ht-key  { color: rgba(193,181,220,0.7); }
+.flip-card-front .ht-val  { color: #eef0f4; }
+.flip-card-front .ht-green{ color: #6bcb77; }
+.flip-card-front .ht-pink { color: #ff2d78; }
+.flip-card-front .ht-cyan { color: #00e5ff; }
+.flip-card-front .ht-yellow{color: #f5e642; }
+
+.flip-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.06em;
+  animation: hint-pulse 3s ease infinite;
+}
+@keyframes hint-pulse { 0%,100%{opacity:0.18} 50%{opacity:0.45} }
+
+/* BACK — photo */
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: #000;
+  border: 1px solid rgba(0,229,255,0.3);
+  box-shadow: 0 0 0 1px rgba(0,229,255,0.08) inset, 0 8px 32px rgba(0,0,0,0.7);
+}
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* name overlay on photo */
+.flip-back-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 28px 14px 14px;
+  background: linear-gradient(to top, rgba(6,8,15,0.88) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.flip-back-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+}
+.flip-back-sub {
+  font-size: 11px;
+  color: #00e5ff;
+  letter-spacing: 0.06em;
+}
+
+/* ── CYBERPUNK GLITCH FLASH ──────────────────────────────────────────── */
+.flip-glitch {
+  position: absolute;
+  inset: -4px;
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  background: transparent;
+}
+
+/* triggered by JS adding .glitch-fire */
+.flip-glitch.glitch-fire {
+  animation: cp-glitch 0.55s steps(1) forwards;
+}
+
+@keyframes cp-glitch {
+  0%  {
+    opacity: 1;
+    background: transparent;
+    box-shadow:
+      0 0 0 2px #ff2d78,
+      4px 0 0 2px #00e5ff,
+      -4px 0 0 2px #f5e642;
+    clip-path: inset(0 0 95% 0);
+  }
+  10% {
+    clip-path: inset(15% 0 70% 0);
+    box-shadow:
+      0 0 0 2px #00e5ff,
+      -6px 0 0 2px #ff2d78,
+      6px 0 0 2px #bf5fff;
+  }
+  20% {
+    clip-path: inset(40% 0 40% 0);
+    background: rgba(255,45,120,0.12);
+    box-shadow: 0 0 30px rgba(255,45,120,0.5), 0 0 60px rgba(0,229,255,0.3);
+  }
+  35% {
+    clip-path: inset(60% 0 15% 0);
+    background: rgba(0,229,255,0.1);
+    box-shadow: 0 0 40px rgba(0,229,255,0.6);
+  }
+  50% {
+    clip-path: inset(80% 0 0 0);
+    background: rgba(245,230,66,0.08);
+    box-shadow: 0 0 24px rgba(245,230,66,0.4);
+  }
+  65% {
+    clip-path: none;
+    background: rgba(255,45,120,0.07);
+    box-shadow:
+      0 0 0 1px rgba(255,45,120,0.6),
+      0 0 20px rgba(255,45,120,0.3);
+  }
+  80% {
+    background: rgba(0,229,255,0.05);
+    box-shadow: 0 0 16px rgba(0,229,255,0.2);
+  }
+  100% {
+    opacity: 0;
+    background: transparent;
+    box-shadow: none;
+    clip-path: none;
+  }
+}
+
+/* scanline sweep during flip */
+.flip-card-inner.is-flipping::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,229,255,0.04) 3px,
+    rgba(0,229,255,0.04) 4px
+  );
+  border-radius: 10px;
+  pointer-events: none;
+  animation: scanline-sweep 0.65s ease forwards;
+  z-index: 5;
+}
+@keyframes scanline-sweep {
+  from { opacity: 1; transform: translateY(-100%); }
+  to   { opacity: 0; transform: translateY(100%); }
+}
+
+/* countdown ring for double-click lock */
+.flip-card.is-locked::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 13px;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--bg), var(--bg)) padding-box,
+    conic-gradient(from 0deg, #ff2d78 0%, #00e5ff 50%, #f5e642 100%) border-box;
+  animation: lock-countdown 10s linear forwards;
+  z-index: 8;
+  pointer-events: none;
+}
+@keyframes lock-countdown {
+  from { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (max-width:1024px) {
+  .flip-card { display: none; }
+}

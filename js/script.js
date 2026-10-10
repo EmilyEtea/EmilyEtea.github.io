@@ -127,7 +127,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ── 9. Parallax glow on hero section ───────────────────
+  // ── 10. Flip card — hover / double-click / auto-unflip ──────────────
+  var flipCard = document.getElementById('profileFlipCard');
+  if (flipCard) {
+    var flipInner  = flipCard.querySelector('.flip-card-inner');
+    var flipGlitch = flipCard.querySelector('.flip-glitch');
+    var lockTimer  = null;
+
+    function triggerGlitch() {
+      if (!flipGlitch) return;
+      flipGlitch.classList.remove('glitch-fire');
+      // force reflow so animation re-triggers
+      void flipGlitch.offsetWidth;
+      flipGlitch.classList.add('glitch-fire');
+      flipGlitch.addEventListener('animationend', function () {
+        flipGlitch.classList.remove('glitch-fire');
+      }, { once: true });
+    }
+
+    function triggerScanline() {
+      if (!flipInner) return;
+      flipInner.classList.add('is-flipping');
+      flipInner.addEventListener('animationend', function () {
+        flipInner.classList.remove('is-flipping');
+      }, { once: true });
+    }
+
+    // hover: flip + effects
+    flipCard.addEventListener('mouseenter', function () {
+      if (flipCard.classList.contains('is-locked')) return;
+      triggerGlitch();
+      triggerScanline();
+    });
+
+    // double-click: lock flipped for 10 s
+    flipCard.addEventListener('dblclick', function () {
+      clearTimeout(lockTimer);
+      flipCard.classList.add('is-locked');
+      triggerGlitch();
+      triggerScanline();
+      lockTimer = setTimeout(function () {
+        triggerGlitch();
+        triggerScanline();
+        flipCard.classList.remove('is-locked');
+      }, 10000);
+    });
+  }
   if (!reduceMotion) {
     var heroSection = document.querySelector('.hero');
     if (heroSection) {
