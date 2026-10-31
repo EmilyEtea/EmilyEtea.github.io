@@ -544,6 +544,21 @@ body::before {
   box-shadow: 0 6px 28px var(--glow-cyan);
 }
 
+/* variant: lavender */
+.btn-lavender {
+  color: var(--fx-lavender);
+  border-color: rgba(193,181,220,0.35);
+  background: rgba(193,181,220,0.06);
+}
+.btn-lavender::before,
+.btn-lavender::after { color: rgba(193,181,220,0.35); }
+.btn-lavender:hover {
+  background: rgba(193,181,220,0.14);
+  color: #fff;
+  border-color: var(--fx-lavender);
+  box-shadow: 0 6px 28px var(--glow-purple);
+}
+
 /* variant: yellow */
 .btn-yellow {
   color: var(--cp-yellow);
