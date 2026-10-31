@@ -369,8 +369,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var html   = document.documentElement;
     var btn    = document.getElementById('theme-toggle');
     var saved  = localStorage.getItem('theme');
-    var osDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme  = saved ? saved : (osDark ? 'dark' : 'light');
+    var theme  = saved ? saved : 'dark';
 
     function apply(t) {
       html.setAttribute('data-theme', t);
