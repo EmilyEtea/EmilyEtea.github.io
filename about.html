@@ -4,9 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Emily Etea</title>
-  <meta name="description" content="About Emily Etea — BSIT graduate, full-stack developer, certifications, skills, experience, and leadership.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+  <meta name="description" content="About Emily Etea — BSIT graduate (UST '26). Skills in project coordination, QA, documentation, admin and operations, and web development. Available for entry-level opportunities.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emilyetea.github.io/about.html">
+  <meta property="og:title" content="About — Emily Etea">
+  <meta property="og:description" content="BSIT graduate (UST '26). Project coordination, QA and documentation, admin and operations support, and web development.">
+  <!-- TODO: replace the og:image path below with a real 1200×630 preview image -->
+  <!-- <meta property="og:image" content="https://emilyetea.github.io/img/og-preview.jpg"> -->
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();
+  </script>
 </head>
 <body>
 <div class="page">
@@ -16,7 +26,16 @@
       <div class="term-dots">
         <span class="a"></span><span class="b"></span><span class="c"></span>
       </div>
-      <a class="site-brand" href="index.html">emily<span class="brand-at">@</span>portfolio</a>
+      <a class="site-brand" href="index.html" aria-label="Emily Etea — home">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="img/logo.svg" alt="" width="44" height="30" class="brand-logo-img">
+        </span>
+        <span class="brand-wordmark">portfolio</span>
+      </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode" title="Toggle light/dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰ menu</button>
       <nav class="site-nav" id="primary-nav" aria-label="Primary">
         <a href="index.html" data-tooltip="Home">whoami</a>
@@ -34,10 +53,11 @@
         <p class="section-eyebrow">cat about.md</p>
         <h1 class="section-title">About <span class="accent">Me</span></h1>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+      <div class="about-grid">
         <div>
-          <p style="color:var(--text-muted);font-size:15px;line-height:1.85;margin-bottom:18px">I'm an IT graduate from the University of Santo Tomas who builds full-stack web systems and leads the teams behind them — gathering stakeholder requirements, writing the code, and seeing the project through to deployment and support.</p>
-          <p style="color:var(--text-muted);font-size:15px;line-height:1.85">I build for organizations where technology needs to solve a real operational problem. Whether that's streamlining payroll, securing a campus, or making a business system actually usable by the people running it.</p>
+          <p class="about-tagline">IT graduate | Project coordination | QA and documentation | Admin and operations support | Web development</p>
+          <p style="color:var(--text-muted);font-size:15px;line-height:1.85;margin-bottom:18px">I'm a fresh IT graduate from the University of Santo Tomas. I've led development teams, run quality assurance from requirements through UAT, coordinated project tasks, and supported end users — across both academic projects and a four-month internship at PECCI Multipurpose Cooperative in Makati City.</p>
+          <p style="color:var(--text-muted);font-size:15px;line-height:1.85">I'm comfortable in business-facing and technical roles alike. Whether that's gathering stakeholder requirements, keeping a Jira board on track, writing technical documentation, or building a web system — I can do the work and communicate clearly about it.</p>
         </div>
         <div class="card accent-pink reveal">
           <p class="cmd-label">emily@about$ cat education.log</p>
@@ -46,7 +66,7 @@
           <p class="entry-org" style="color:var(--text-muted)">University of Santo Tomas</p>
           <span class="entry-date">August 2022 – June 2026</span>
           <div class="chips">
-            <span class="chip chip-honor">🏅 Dean's Lister, AY 2025–2026</span>
+            <span class="chip chip-honor">Dean's Lister, AY 2025–2026</span>
           </div>
         </div>
       </div>
@@ -66,14 +86,85 @@
           <p class="entry-org">PECCI Multipurpose Cooperative · Makati City, Philippines</p>
           <span class="entry-date">February 2026 – June 2026</span>
           <ul class="plain">
-            <li>Led a 5-member development team in building and enhancing HRIS Payroll Module features</li>
+            <li>Led a 5-member development team building and enhancing HRIS Payroll Module features</li>
             <li>Developed payroll computation and deduction tracking features using C#, React/JS, and Microsoft SQL Server</li>
             <li>Gathered and documented requirements from cooperative management stakeholders</li>
             <li>Translated requirements into functional specifications and system features</li>
-            <li>Conducted structured system testing and validated functionality against requirements</li>
-            <li>Produced technical documentation and provided support during deployment and post-launch</li>
+            <li>Conducted functional testing and validated system behaviour against requirements</li>
+            <li>Wrote technical documentation and provided support during deployment and post-launch maintenance</li>
+            <li>Gave end-user technical support to cooperative staff</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIN AND OPERATIONS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">cat ops.md</p>
+        <h2 class="section-title">Admin and <span class="accent">Operations</span></h2>
+        <p class="section-sub">Business-facing skills built through project work, leadership roles, and internship experience.</p>
+      </div>
+      <div class="skills-grid">
+
+        <div class="card accent-cyan reveal" style="padding:20px 22px">
+          <p class="skill-category">Task coordination and project tracking</p>
+          <div class="chips">
+            <span class="chip">Jira</span>
+            <span class="chip">Trello</span>
+            <span class="chip">Sprint planning</span>
+            <span class="chip">Milestone tracking</span>
+            <span class="chip">Agile/Scrum</span>
+          </div>
+          <p style="margin-top:12px;font-size:13px;">Coordinated task assignments and tracked sprint progress across teams of 4–8 people on multiple projects. Kept work boards current and flagged blockers early.</p>
+        </div>
+
+        <div class="card accent-lavender reveal" style="padding:20px 22px">
+          <p class="skill-category">Calendar and schedule coordination</p>
+          <div class="chips">
+            <span class="chip">Google Calendar</span>
+            <span class="chip">Meeting scheduling</span>
+            <span class="chip">Sprint ceremonies</span>
+          </div>
+          <p style="margin-top:12px;font-size:13px;">Scheduled and coordinated sprint ceremonies, stakeholder meetings, and team check-ins. Managed availability across small cross-functional teams.</p>
+        </div>
+
+        <div class="card accent-yellow reveal" style="padding:20px 22px">
+          <p class="skill-category">Email and inbox management</p>
+          <div class="chips">
+            <span class="chip">Gmail</span>
+            <span class="chip">Outlook</span>
+            <span class="chip">Professional correspondence</span>
+          </div>
+          <p style="margin-top:12px;font-size:13px;">Handled team and stakeholder correspondence during the internship and as Class President. Clear, prompt written communication in both Filipino and English.</p>
+        </div>
+
+        <div class="card accent-pink reveal" style="padding:20px 22px">
+          <p class="skill-category">Documentation and research</p>
+          <div class="chips">
+            <span class="chip">Technical documentation</span>
+            <span class="chip">Requirements specs</span>
+            <span class="chip">Test cases and UAT</span>
+            <span class="chip">Data entry</span>
+            <span class="chip">Research and analysis</span>
+          </div>
+          <p style="margin-top:12px;font-size:13px;">Wrote functional specs, test plans, and system documentation across four projects. Conducted research for requirements and project planning phases.</p>
+        </div>
+
+        <div class="card accent-purple reveal" style="padding:20px 22px">
+          <p class="skill-category">Productivity tools</p>
+          <div class="chips">
+            <span class="chip">Google Workspace</span>
+            <span class="chip">Microsoft Word</span>
+            <span class="chip">Microsoft Excel</span>
+            <span class="chip">Microsoft PowerPoint</span>
+            <span class="chip">Canva</span>
+          </div>
+          <p style="margin-top:12px;font-size:13px;">Used daily for documentation, reporting, and presentations across academic and internship work.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -84,7 +175,7 @@
       <div class="section-head">
         <p class="section-eyebrow">cat skills.log</p>
         <h2 class="section-title">Tech <span class="accent">Stack</span></h2>
-        <p class="section-sub">Languages, frameworks, tools, and professional competencies from my resume and projects.</p>
+        <p class="section-sub">Languages, frameworks, tools, and professional competencies.</p>
       </div>
       <div class="skills-grid">
         <div class="card accent-pink reveal" style="padding:20px 22px">
@@ -96,7 +187,6 @@
             <span class="chip">React.js</span>
             <span class="chip">Node.js</span>
             <span class="chip">REST APIs</span>
-            <span class="chip">Chrome DevTools</span>
             <span class="chip">Figma</span>
           </div>
         </div>
@@ -117,30 +207,37 @@
           </div>
         </div>
         <div class="card accent-yellow reveal" style="padding:20px 22px">
-          <p class="skill-category">Tools &amp; Platforms</p>
+          <p class="skill-category">Developer Tools</p>
           <div class="chips">
             <span class="chip">Git &amp; GitHub</span>
             <span class="chip">VS Code</span>
             <span class="chip">Postman</span>
             <span class="chip">Selenium</span>
+            <span class="chip">Android Studio</span>
+          </div>
+        </div>
+        <div class="card accent-yellow reveal" style="padding:20px 22px">
+          <p class="skill-category">Project &amp; Admin Tools</p>
+          <div class="chips">
             <span class="chip">Jira</span>
             <span class="chip">Trello</span>
-            <span class="chip">Android Studio</span>
+            <span class="chip">Google Workspace</span>
+            <span class="chip">Microsoft Office</span>
             <span class="chip">Canva</span>
-            <span class="chip">Google Cloud</span>
           </div>
         </div>
         <div class="card accent-purple reveal" style="padding:20px 22px;grid-column:1/-1">
           <p class="skill-category">Professional</p>
           <div class="chips">
-            <span class="chip">System Testing &amp; Debugging</span>
-            <span class="chip">Scrum/Agile</span>
-            <span class="chip">UAT</span>
-            <span class="chip">Technical Documentation</span>
+            <span class="chip">Agile/Scrum</span>
             <span class="chip">Requirements Gathering</span>
-            <span class="chip">Cross-Functional Collaboration</span>
-            <span class="chip">Stakeholder Communication</span>
+            <span class="chip">QA &amp; UAT</span>
+            <span class="chip">Technical Documentation</span>
             <span class="chip">Project Coordination</span>
+            <span class="chip">Calendar &amp; Schedule Coordination</span>
+            <span class="chip">Email &amp; Inbox Management</span>
+            <span class="chip">Data Entry &amp; Research</span>
+            <span class="chip">Stakeholder Communication</span>
           </div>
         </div>
       </div>
@@ -193,7 +290,7 @@
       </div>
 
       <div class="cert-wallets reveal">
-        <p class="cert-wallets-label">See all verified badges &amp; credentials:</p>
+        <p class="cert-wallets-label">See all verified badges and credentials:</p>
         <div class="btn-row">
           <a class="btn btn-wallet" href="https://www.credly.com/users/emily-etea/badges" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
@@ -215,21 +312,21 @@
         <p class="section-eyebrow">cat leadership.log</p>
         <h2 class="section-title">Leadership &amp; <span class="accent">Affiliations</span></h2>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+      <div class="about-grid">
         <div class="timeline reveal">
           <div class="entry">
             <p class="entry-title">President</p>
-            <p class="entry-org">UST CICS Student Council</p>
+            <p class="entry-org">CICS Class Officer</p>
             <span class="entry-date">2025–2026</span>
           </div>
           <div class="entry">
             <p class="entry-title">Public Relations Officer</p>
-            <p class="entry-org">UST CICS Student Council</p>
+            <p class="entry-org">CICS Class Officer</p>
             <span class="entry-date">2023–2024</span>
           </div>
           <div class="entry">
             <p class="entry-title">Secretary</p>
-            <p class="entry-org">UST CICS Student Council</p>
+            <p class="entry-org">CICS Class Officer</p>
             <span class="entry-date">2022–2023</span>
           </div>
         </div>
@@ -253,16 +350,19 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div><p class="footer-status-row">available for entry-level opportunities</p></div>
+      <div><p class="footer-status-row">Available for entry-level opportunities</p></div>
       <div class="footer-links">
-        <a class="social-link" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
+        <a class="social-link social-link--labeled" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.34-3.37-1.34-.45-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.05A9.34 9.34 0 0 1 12 6.8c.84 0 1.69.11 2.48.33 1.92-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.01 1.63 1.01 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
+          <span>GitHub</span>
         </a>
-        <a class="social-link" href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener" aria-label="LinkedIn" data-tooltip="linkedin.com/in/emily-etea">
+        <a class="social-link social-link--labeled" href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener" aria-label="LinkedIn" data-tooltip="linkedin.com/in/emily-etea">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.66h2.9v8.84H5.5V9.66Zm4.68 0h2.77v1.21h.04c.39-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.43v6.7h-2.9v-6.27c0-1.49-.03-3.41-2.08-3.41-2.08 0-2.4 1.62-2.4 3.3v6.38h-2.9V9.66Z"/></svg>
+          <span>LinkedIn</span>
         </a>
-        <a class="social-link" href="mailto:emilyetea@hotmail.com" aria-label="Email" data-tooltip="emilyetea@hotmail.com">
+        <a class="social-link social-link--labeled" href="mailto:emilyetea@hotmail.com" aria-label="Email" data-tooltip="emilyetea@hotmail.com">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+          <span>Email</span>
         </a>
       </div>
       <div class="footer-copy">

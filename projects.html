@@ -4,9 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Emily Etea</title>
-  <meta name="description" content="Emily Etea's portfolio projects — campus security, enterprise HR, café management, and waste management web systems.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+  <meta name="description" content="Emily Etea's projects — campus security, enterprise HR, café management, and waste management web systems. Project management, QA, and full-stack development.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emilyetea.github.io/projects.html">
+  <meta property="og:title" content="Projects — Emily Etea">
+  <meta property="og:description" content="Four projects across campus security, enterprise HR, café management, and waste management. Project management, QA, and full-stack development.">
+  <!-- TODO: replace the og:image path below with a real 1200×630 preview image -->
+  <!-- <meta property="og:image" content="https://emilyetea.github.io/img/og-preview.jpg"> -->
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();
+  </script>
 </head>
 <body>
 <div class="page">
@@ -16,7 +26,16 @@
       <div class="term-dots">
         <span class="a"></span><span class="b"></span><span class="c"></span>
       </div>
-      <a class="site-brand" href="index.html">emily<span class="brand-at">@</span>portfolio</a>
+      <a class="site-brand" href="index.html" aria-label="Emily Etea — home">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="img/logo.svg" alt="" width="44" height="30" class="brand-logo-img">
+        </span>
+        <span class="brand-wordmark">portfolio</span>
+      </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode" title="Toggle light/dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰ menu</button>
       <nav class="site-nav" id="primary-nav" aria-label="Primary">
         <a href="index.html" data-tooltip="Home">whoami</a>
@@ -32,7 +51,7 @@
       <div class="section-head">
         <p class="section-eyebrow">ls ~/projects</p>
         <h1 class="section-title"><span class="accent">Projects</span></h1>
-        <p class="section-sub">4 projects across campus security, enterprise HR, café management, and waste management. What each does, what I built, and how.</p>
+        <p class="section-sub">Four projects across campus security, enterprise HR, café management, and waste management — spanning project management, QA, and full-stack development.</p>
       </div>
     </div>
   </section>
@@ -41,6 +60,7 @@
     <div class="container">
       <div class="projects-list">
 
+        <!-- PROJECT 01: iVisit UST -->
         <div class="card accent-pink reveal">
           <div class="project-number" aria-hidden="true">01</div>
           <p class="cmd-label">emily@projects$ cat ivisit-ust/README.md</p>
@@ -53,7 +73,7 @@
             <span class="card-meta">Project Manager &amp; QA · Team of 4</span>
           </div>
           <p class="project-what">What it does</p>
-          <p class="project-desc">A web-based campus entry and security monitoring system for UST. Uses OCR to read IDs and RFID for access verification — providing real-time visitor logging and security alerts for staff.</p>
+          <p class="project-desc">A web-based campus entry and security monitoring system for UST. Uses OCR to read IDs and RFID for access verification, providing real-time visitor logging and security alerts for staff.</p>
           <p class="project-what">What I worked on</p>
           <ul class="worked-on">
             <li>Led Agile sprint planning and team task coordination</li>
@@ -70,15 +90,20 @@
             <span class="chip">UAT</span>
             <span class="chip">QA Documentation</span>
           </div>
+          <!-- TODO: add project screenshot to img/ivisit-screenshot.jpg and uncomment the img below -->
+          <!-- <img src="img/ivisit-screenshot.jpg" alt="iVisit UST — screenshot of the campus entry dashboard" loading="lazy" class="project-screenshot"> -->
           <div class="btn-row" style="margin-top:18px">
+            <!-- TODO: replace href with the actual iVisit UST repository URL -->
             <a class="btn btn-primary" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
+            <!-- TODO: add live demo link if available: <a class="btn btn-cyan" href="LIVE_URL" target="_blank" rel="noopener">live demo</a> -->
           </div>
         </div>
 
+        <!-- PROJECT 02: PECCI HRIS -->
         <div class="card accent-lavender reveal">
           <div class="project-number" aria-hidden="true">02</div>
           <p class="cmd-label">emily@projects$ cat pecci-hris/README.md</p>
-          <span class="pill pill-lavender">Internship · 2026</span>
+          <span class="pill pill-lavender">Internship · Feb–Jun 2026</span>
           <div class="card-head">
             <p class="card-title">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -90,25 +115,29 @@
           <p class="project-desc">Enterprise HRIS payroll module enhancements for PECCI Multipurpose Cooperative. Handles payroll computation, deduction tracking, and reporting — replacing manual processes that caused errors and delays.</p>
           <p class="project-what">What I worked on</p>
           <ul class="worked-on">
-            <li>Led 5-member dev team, coordinating tasks and timelines over 4 months</li>
-            <li>Developed Payroll Module features in C#, React/JS, and Microsoft SQL Server</li>
-            <li>Gathered requirements from stakeholders, translated into system features</li>
-            <li>Validated system functionality through structured testing</li>
-            <li>Produced technical documentation, supported deployment</li>
+            <li>Led a 5-member development team, coordinating tasks and timelines over four months</li>
+            <li>Built Payroll Module features in C#, React/JS, and Microsoft SQL Server</li>
+            <li>Gathered requirements from stakeholders and translated them into functional specifications</li>
+            <li>Conducted functional testing and validated system behaviour against requirements</li>
+            <li>Wrote technical documentation, supported deployment, and gave end-user technical support</li>
           </ul>
           <div class="chips">
             <span class="chip">C#</span>
             <span class="chip">.NET/ASP.NET</span>
             <span class="chip">React/JavaScript</span>
             <span class="chip">Microsoft SQL Server</span>
-            <span class="chip">Team Lead</span>
             <span class="chip">Requirements Gathering</span>
+            <span class="chip">Technical Documentation</span>
           </div>
+          <!-- TODO: add project screenshot to img/pecci-screenshot.jpg and uncomment the img below -->
+          <!-- <img src="img/pecci-screenshot.jpg" alt="PECCI HRIS Payroll Module — screenshot" loading="lazy" class="project-screenshot"> -->
           <div class="btn-row" style="margin-top:18px">
+            <!-- TODO: replace href with the actual PECCI HRIS repository URL if publicly available -->
             <a class="btn btn-cyan" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
           </div>
         </div>
 
+        <!-- PROJECT 03: DOS Coffee Connect -->
         <div class="card accent-cyan reveal">
           <div class="project-number" aria-hidden="true">03</div>
           <p class="cmd-label">emily@projects$ cat dos-coffee-connect/README.md</p>
@@ -124,10 +153,10 @@
           <p class="project-desc">A role-based café management web app — customers order, staff manage inventory, admins handle reporting. Built as a Software Engineering project with a full SDLC from requirements through UAT.</p>
           <p class="project-what">What I worked on</p>
           <ul class="worked-on">
-            <li>Coordinated 8-member team across planning, dev, testing, and delivery</li>
+            <li>Coordinated an 8-member team across planning, development, testing, and delivery</li>
             <li>Translated stakeholder requirements into user stories and system features</li>
-            <li>Managed sprint assignments and milestone tracking</li>
-            <li>Oversaw system testing, QA, and documentation</li>
+            <li>Managed sprint assignments and milestone tracking in Trello/Jira</li>
+            <li>Oversaw system testing, QA, and all project documentation</li>
           </ul>
           <div class="chips">
             <span class="chip">PHP</span>
@@ -137,11 +166,16 @@
             <span class="chip">UAT</span>
             <span class="chip">Project Management</span>
           </div>
+          <!-- TODO: add project screenshot to img/dos-screenshot.jpg and uncomment the img below -->
+          <!-- <img src="img/dos-screenshot.jpg" alt="DOS Coffee Connect — screenshot of the café management dashboard" loading="lazy" class="project-screenshot"> -->
           <div class="btn-row" style="margin-top:18px">
+            <!-- TODO: replace href with the actual DOS Coffee Connect repository URL -->
             <a class="btn btn-cyan" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
+            <!-- TODO: add live demo link if available: <a class="btn btn-primary" href="LIVE_URL" target="_blank" rel="noopener">live demo</a> -->
           </div>
         </div>
 
+        <!-- PROJECT 04: Trash to Treasure -->
         <div class="card accent-yellow reveal">
           <div class="project-number" aria-hidden="true">04</div>
           <p class="cmd-label">emily@projects$ cat trash-to-treasure/README.md</p>
@@ -158,7 +192,7 @@
           <p class="project-what">What I worked on</p>
           <ul class="worked-on">
             <li>Built frontend and backend features across the full application stack</li>
-            <li>Designed database schema and data access patterns</li>
+            <li>Designed the database schema and data access patterns</li>
             <li>Integrated backend services and REST API endpoints</li>
             <li>Performed system testing, debugging, and performance improvements</li>
           </ul>
@@ -169,8 +203,12 @@
             <span class="chip">REST APIs</span>
             <span class="chip">Full-Stack</span>
           </div>
+          <!-- TODO: add project screenshot to img/trash-screenshot.jpg and uncomment the img below -->
+          <!-- <img src="img/trash-screenshot.jpg" alt="Trash to Treasure — screenshot of the upcycling platform" loading="lazy" class="project-screenshot"> -->
           <div class="btn-row" style="margin-top:18px">
+            <!-- TODO: replace href with the actual Trash to Treasure repository URL -->
             <a class="btn btn-yellow" href="https://github.com/EmilyEtea" target="_blank" rel="noopener">view repo</a>
+            <!-- TODO: add live demo link if available: <a class="btn btn-cyan" href="LIVE_URL" target="_blank" rel="noopener">live demo</a> -->
           </div>
         </div>
 
@@ -180,16 +218,19 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div><p class="footer-status-row">available for entry-level opportunities</p></div>
+      <div><p class="footer-status-row">Available for entry-level opportunities</p></div>
       <div class="footer-links">
-        <a class="social-link" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
+        <a class="social-link social-link--labeled" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.34-3.37-1.34-.45-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.05A9.34 9.34 0 0 1 12 6.8c.84 0 1.69.11 2.48.33 1.92-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.01 1.63 1.01 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
+          <span>GitHub</span>
         </a>
-        <a class="social-link" href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener" aria-label="LinkedIn" data-tooltip="linkedin.com/in/emily-etea">
+        <a class="social-link social-link--labeled" href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener" aria-label="LinkedIn" data-tooltip="linkedin.com/in/emily-etea">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.66h2.9v8.84H5.5V9.66Zm4.68 0h2.77v1.21h.04c.39-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.43v6.7h-2.9v-6.27c0-1.49-.03-3.41-2.08-3.41-2.08 0-2.4 1.62-2.4 3.3v6.38h-2.9V9.66Z"/></svg>
+          <span>LinkedIn</span>
         </a>
-        <a class="social-link" href="mailto:emilyetea@hotmail.com" aria-label="Email" data-tooltip="emilyetea@hotmail.com">
+        <a class="social-link social-link--labeled" href="mailto:emilyetea@hotmail.com" aria-label="Email" data-tooltip="emilyetea@hotmail.com">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+          <span>Email</span>
         </a>
       </div>
       <div class="footer-copy">

@@ -3,10 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emily Etea — IT Graduate &amp; Developer</title>
-  <meta name="description" content="Emily Etea — IT graduate, full-stack developer, and project manager. UST BSIT '26. Building web systems that solve real operational problems.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+  <title>Emily Etea — IT Graduate | Project Coordination | QA | Admin &amp; Operations</title>
+  <meta name="description" content="Emily Etea — BSIT graduate (UST '26). Project coordination, QA and documentation, admin and operations support, and web development. Available for entry-level opportunities.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emilyetea.github.io/">
+  <meta property="og:title" content="Emily Etea — IT Graduate | Project Coordination | QA | Admin &amp; Operations">
+  <meta property="og:description" content="BSIT graduate (UST '26). Project coordination, QA and documentation, admin and operations support, and web development. Available for entry-level opportunities.">
+  <!-- TODO: replace the og:image path below with a real 1200×630 preview image -->
+  <!-- <meta property="og:image" content="https://emilyetea.github.io/img/og-preview.jpg"> -->
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Apply saved theme before first paint — prevents flash
+    (function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();
+  </script>
 </head>
 <body>
 <div class="page">
@@ -16,7 +27,18 @@
       <div class="term-dots">
         <span class="a"></span><span class="b"></span><span class="c"></span>
       </div>
-      <a class="site-brand" href="index.html">emily<span class="brand-at">@</span>portfolio</a>
+      <a class="site-brand" href="index.html" aria-label="Emily Etea — home">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="img/logo.svg" alt="" width="44" height="30" class="brand-logo-img">
+        </span>
+        <span class="brand-wordmark">portfolio</span>
+      </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode" title="Toggle light/dark mode">
+        <!-- moon — shown in dark mode -->
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        <!-- sun — shown in light mode -->
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰ menu</button>
       <nav class="site-nav" id="primary-nav" aria-label="Primary">
         <a href="index.html" aria-current="page" data-tooltip="Home">whoami</a>
@@ -27,74 +49,184 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-inner">
+  <section class="hero hero--no-photo">
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+    <div class="hero-inner hero-inner--centered">
 
-      <!-- FLIP CARD — left side -->
-      <div class="flip-card" id="profileFlipCard" style="align-self:start;margin-top:52px;" title="Hover to flip · Double-click to lock">
-        <div class="flip-card-inner">
-          <!-- FRONT: grad photo -->
-          <div class="flip-card-front">
-            <img src="img/emily1.jpg" alt="Emily Etea — UST graduation photo" draggable="false">
-            <div class="flip-hint">hover to flip ↺</div>
-          </div>
-          <!-- BACK: second photo -->
-          <div class="flip-card-back">
-            <img src="img/emily2.jpg" alt="Emily Etea" draggable="false">
-          </div>
-        </div>
-        <div class="flip-glitch" aria-hidden="true"></div>
-      </div>
-
-      <!-- HERO TEXT — right side -->
       <div class="hero-content">
-        <p class="hero-status">available for opportunities</p>
+        <p class="hero-status">Available for entry-level opportunities</p>
         <h1 class="hero-name">
           <span class="line1" data-typewriter>Emily Etea<span class="cursor" aria-hidden="true"></span></span>
-          <span class="line2" style="font-size:clamp(14px,2.2vw,28px);white-space:nowrap;">Project Management&nbsp;&nbsp;|&nbsp;&nbsp;Quality Assurance&nbsp;&nbsp;|&nbsp;&nbsp;Systems &amp; Web Development</span>
         </h1>
-        <p class="hero-role">IT Graduate · UST '26 · Silang, Cavite, PH</p>
-        <p class="hero-bio">I'm an IT graduate who builds <strong>full-stack web systems</strong> and leads the teams behind them — from requirements to deployment. I build for organizations where technology needs to solve a real problem, not just look like it does.</p>
+        <p class="hero-role">BSIT · UST '26 · Silang, Cavite, PH</p>
+
+        <!-- Role tagline ticker -->
+        <div class="ticker-wrap" aria-label="Areas of focus" role="marquee">
+          <div class="ticker-track">
+            <span class="ticker-item"><span class="ticker-dot ticker-dot--pink"></span>IT Graduate</span>
+            <span class="ticker-sep" aria-hidden="true">//</span>
+            <span class="ticker-item"><span class="ticker-dot ticker-dot--cyan"></span>Project Coordination</span>
+            <span class="ticker-sep" aria-hidden="true">//</span>
+            <span class="ticker-item"><span class="ticker-dot ticker-dot--lavender"></span>QA &amp; Documentation</span>
+            <span class="ticker-sep" aria-hidden="true">//</span>
+            <span class="ticker-item"><span class="ticker-dot ticker-dot--yellow"></span>Admin &amp; Operations</span>
+            <span class="ticker-sep" aria-hidden="true">//</span>
+            <span class="ticker-item"><span class="ticker-dot ticker-dot--purple"></span>Web Development</span>
+            <span class="ticker-sep" aria-hidden="true">//</span>
+            <!-- duplicate set for seamless loop -->
+            <span class="ticker-item" aria-hidden="true"><span class="ticker-dot ticker-dot--pink"></span>IT Graduate</span>
+            <span class="ticker-sep" aria-hidden="true">//</span>
+            <span class="ticker-item" aria-hidden="true"><span class="ticker-dot ticker-dot--cyan"></span>Project Coordination</span>
+            <span class="ticker-sep" aria-hidden="true">//</span>
+            <span class="ticker-item" aria-hidden="true"><span class="ticker-dot ticker-dot--lavender"></span>QA &amp; Documentation</span>
+            <span class="ticker-sep" aria-hidden="true">//</span>
+            <span class="ticker-item" aria-hidden="true"><span class="ticker-dot ticker-dot--yellow"></span>Admin &amp; Operations</span>
+            <span class="ticker-sep" aria-hidden="true">//</span>
+            <span class="ticker-item" aria-hidden="true"><span class="ticker-dot ticker-dot--purple"></span>Web Development</span>
+            <span class="ticker-sep" aria-hidden="true">//</span>
+          </div>
+        </div>
+
+        <p class="hero-bio">Fresh IT graduate who has led development teams, run QA from requirements to UAT, managed project documentation, and supported end users. Comfortable in both technical and business-facing roles — whether that's coordinating tasks in Jira, gathering stakeholder requirements, or building a web system from scratch.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="projects.html">view projects</a>
           <a class="btn btn-cyan" href="about.html">skills &amp; background</a>
           <a class="btn" href="contact.html">get in touch</a>
+        </div>
+        <div class="hero-links" aria-label="External profiles">
+          <a href="https://github.com/EmilyEtea" target="_blank" rel="noopener" class="hero-text-link">GitHub</a>
+          <span class="hero-link-sep" aria-hidden="true">·</span>
+          <a href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener" class="hero-text-link">LinkedIn</a>
+          <span class="hero-link-sep" aria-hidden="true">·</span>
+          <a href="mailto:emilyetea@hotmail.com" class="hero-text-link">emilyetea@hotmail.com</a>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- WHAT I'VE SHIPPED -->
   <section class="section">
     <div class="container">
       <div class="section-head">
         <p class="section-eyebrow">highlights</p>
         <h2 class="section-title">What I've <span class="accent">shipped</span></h2>
       </div>
-      <div class="highlight-strip reveal">
-        <div class="hs-icon">🏢</div>
-        <div>
-          <p class="hs-title">IT Support Intern → Project Lead · PECCI Multipurpose Cooperative</p>
-          <p class="hs-sub">Led a 5-member team building HRIS Payroll Module features in C#, React/JS, and SQL Server. Requirements, development, testing, deployment.</p>
+      <div class="shipped-grid">
+
+        <div class="shipped-card shipped-card--pink reveal">
+          <div class="sc-bar" aria-hidden="true"></div>
+          <div class="sc-body">
+            <p class="sc-cmd">emily@portfolio$ cat pecci.log</p>
+            <div class="sc-head">
+              <span class="sc-role-badge">Internship · 2026</span>
+            </div>
+            <p class="sc-title">IT Support Intern → Project Lead</p>
+            <p class="sc-org">PECCI Multipurpose Cooperative · Makati City</p>
+            <p class="sc-desc">Led a 5-member team building HRIS Payroll Module features in C#, React/JS, and SQL Server. Requirements gathering, functional testing, technical documentation, deployment support, and end-user support.</p>
+            <div class="sc-chips">
+              <span class="chip">C# · React/JS · SQL Server</span>
+              <span class="chip">Requirements Gathering</span>
+              <span class="chip">Team Lead</span>
+            </div>
+          </div>
         </div>
+
+        <div class="shipped-card shipped-card--lavender reveal">
+          <div class="sc-bar" aria-hidden="true"></div>
+          <div class="sc-body">
+            <p class="sc-cmd">emily@portfolio$ cat ivisit.log</p>
+            <div class="sc-head">
+              <span class="sc-role-badge">Capstone · 2025–2026</span>
+            </div>
+            <p class="sc-title">iVisit UST — Campus Entry &amp; Security Monitoring</p>
+            <p class="sc-org">Project Manager &amp; QA · Team of 4</p>
+            <p class="sc-desc">OCR + RFID campus entry system for UST Campus Safety. Led Agile sprints, designed and executed 200+ test cases, maintained full QA documentation.</p>
+            <div class="sc-chips">
+              <span class="chip">Java · React.js · OCR · RFID</span>
+              <span class="chip">Agile/Scrum</span>
+              <span class="chip">QA &amp; UAT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="shipped-card shipped-card--cyan reveal">
+          <div class="sc-bar" aria-hidden="true"></div>
+          <div class="sc-body">
+            <p class="sc-cmd">emily@portfolio$ cat dos-coffee.log</p>
+            <div class="sc-head">
+              <span class="sc-role-badge">Software Engineering · 2025</span>
+            </div>
+            <p class="sc-title">DOS Coffee Connect</p>
+            <p class="sc-org">Project Manager · Team of 8</p>
+            <p class="sc-desc">Role-based café management web app — customers order, staff manage inventory, admins handle reporting. Full SDLC from requirements through UAT.</p>
+            <div class="sc-chips">
+              <span class="chip">PHP · JavaScript · SQL</span>
+              <span class="chip">Project Management</span>
+              <span class="chip">UAT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="shipped-card shipped-card--yellow reveal">
+          <div class="sc-bar" aria-hidden="true"></div>
+          <div class="sc-body">
+            <p class="sc-cmd">emily@portfolio$ cat trash-to-treasure.log</p>
+            <div class="sc-head">
+              <span class="sc-role-badge">Full-Stack Developer · 2024</span>
+            </div>
+            <p class="sc-title">Trash to Treasure</p>
+            <p class="sc-org">Waste Management &amp; Upcycling Platform</p>
+            <p class="sc-desc">Web platform for waste management and upcycling — browse recyclable materials, list items for reuse, discover guides. Built full-stack from schema design to REST API integration.</p>
+            <div class="sc-chips">
+              <span class="chip">JavaScript · Node.js · MongoDB</span>
+              <span class="chip">REST APIs</span>
+              <span class="chip">Full-Stack</span>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="highlight-strip reveal">
-        <div class="hs-icon">🔎</div>
-        <div>
-          <p class="hs-title">Capstone: iVisit UST — Campus Entry &amp; Security Monitoring System</p>
-          <p class="hs-sub">Project Manager &amp; QA on an OCR + RFID campus entry system for UST Campus Safety Office. Led Agile sprints, 200+ test cases, full QA documentation.</p>
-        </div>
-      </div>
-      <div class="highlight-strip reveal">
-        <div class="hs-icon">🎓</div>
-        <div>
-          <p class="hs-title">Dean's Lister AY 2025–2026 · UST CICS Class President 2025–2026</p>
-          <p class="hs-sub">Academic recognition alongside three consecutive years of class officer roles — Secretary → PRO → President.</p>
-        </div>
+      <div style="margin-top:28px">
+        <a class="btn btn-primary" href="projects.html">see full project details</a>
       </div>
     </div>
   </section>
 
+  <!-- RECOGNITION AND LEADERSHIP -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">recognition and leadership</p>
+        <h2 class="section-title">Recognition and <span class="accent">Leadership</span></h2>
+      </div>
+      <div class="shipped-grid shipped-grid--half">
+
+        <div class="shipped-card shipped-card--yellow reveal">
+          <div class="sc-bar" aria-hidden="true"></div>
+          <div class="sc-body">
+            <p class="sc-cmd">emily@portfolio$ cat honors.log</p>
+            <p class="sc-title">Dean's Lister</p>
+            <p class="sc-org">UST CICS · AY 2025–2026</p>
+            <p class="sc-desc">Academic recognition for the final year of the BSIT programme, College of Information and Computing Sciences.</p>
+          </div>
+        </div>
+
+        <div class="shipped-card shipped-card--pink reveal">
+          <div class="sc-bar" aria-hidden="true"></div>
+          <div class="sc-body">
+            <p class="sc-cmd">emily@portfolio$ cat leadership.log</p>
+            <p class="sc-title">Class Officer</p>
+            <p class="sc-org">CICS Class Officer · 2022–2026</p>
+            <p class="sc-desc">Three consecutive years of class officer roles — Secretary (2022–2023), PRO (2023–2024), President (2025–2026).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
   <section class="section">
     <div class="container">
       <div class="section-head">
@@ -110,7 +242,6 @@
             <span class="chip">JavaScript</span>
             <span class="chip">React.js</span>
             <span class="chip">PHP</span>
-            <span class="chip">Chrome DevTools</span>
             <span class="chip">Figma</span>
           </div>
         </div>
@@ -132,16 +263,16 @@
           </div>
         </div>
         <div class="card accent-yellow reveal" style="padding:20px 22px">
-          <p class="skill-category">Tools &amp; Workflow</p>
+          <p class="skill-category">Project &amp; Admin Tools</p>
           <div class="chips">
-            <span class="chip">Git &amp; GitHub</span>
             <span class="chip">Jira</span>
             <span class="chip">Trello</span>
+            <span class="chip">Google Workspace</span>
+            <span class="chip">Microsoft Office</span>
+            <span class="chip">Canva</span>
+            <span class="chip">Git &amp; GitHub</span>
             <span class="chip">Postman</span>
             <span class="chip">Selenium</span>
-            <span class="chip">Android Studio</span>
-            <span class="chip">Google Cloud</span>
-            <span class="chip">Canva</span>
           </div>
         </div>
         <div class="card accent-purple reveal" style="padding:20px 22px">
@@ -152,7 +283,9 @@
             <span class="chip">QA &amp; UAT</span>
             <span class="chip">Technical Documentation</span>
             <span class="chip">Project Coordination</span>
-            <span class="chip">Stakeholder Communication</span>
+            <span class="chip">Calendar &amp; Schedule Coordination</span>
+            <span class="chip">Email &amp; Inbox Management</span>
+            <span class="chip">Data Entry &amp; Research</span>
           </div>
         </div>
       </div>
@@ -161,16 +294,19 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div><p class="footer-status-row">available for entry-level opportunities</p></div>
+      <div><p class="footer-status-row">Available for entry-level opportunities</p></div>
       <div class="footer-links">
-        <a class="social-link" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
+        <a class="social-link social-link--labeled" href="https://github.com/EmilyEtea" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="github.com/EmilyEtea">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.34-3.37-1.34-.45-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.54 1.05 1.54 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.05A9.34 9.34 0 0 1 12 6.8c.84 0 1.69.11 2.48.33 1.92-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.01 1.63 1.01 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
+          <span>GitHub</span>
         </a>
-        <a class="social-link" href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener" aria-label="LinkedIn" data-tooltip="linkedin.com/in/emily-etea">
+        <a class="social-link social-link--labeled" href="https://www.linkedin.com/in/emily-etea" target="_blank" rel="noopener" aria-label="LinkedIn" data-tooltip="linkedin.com/in/emily-etea">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.66h2.9v8.84H5.5V9.66Zm4.68 0h2.77v1.21h.04c.39-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.43v6.7h-2.9v-6.27c0-1.49-.03-3.41-2.08-3.41-2.08 0-2.4 1.62-2.4 3.3v6.38h-2.9V9.66Z"/></svg>
+          <span>LinkedIn</span>
         </a>
-        <a class="social-link" href="mailto:emilyetea@hotmail.com" aria-label="Email" data-tooltip="emilyetea@hotmail.com">
+        <a class="social-link social-link--labeled" href="mailto:emilyetea@hotmail.com" aria-label="Email" data-tooltip="emilyetea@hotmail.com">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+          <span>Email</span>
         </a>
       </div>
       <div class="footer-copy">
