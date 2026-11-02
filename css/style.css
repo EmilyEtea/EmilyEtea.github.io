@@ -1900,6 +1900,7 @@ ul.plain li::before { content:'–'; position:absolute; left:0; color:var(--text
   grid-template-columns: 1fr;
   padding: 0 24px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .hero--no-photo .hero-content {
@@ -1930,6 +1931,13 @@ ul.plain li::before { content:'–'; position:absolute; left:0; color:var(--text
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .hero-inner--centered { padding: 0 16px; }
+  .hero--no-photo { width: 100%; box-sizing: border-box; }
+  .hero--no-photo .hero-inner { width: 100%; box-sizing: border-box; }
+  .hero--no-photo .hero-content { width: 100%; min-width: 0; box-sizing: border-box; overflow: hidden; }
+  .hero--no-photo .hero-name .line1 { font-size: clamp(36px, 9vw, 52px); white-space: normal; word-break: break-word; }
+  .hero-bio { max-width: 100%; }
+  .hero-links { flex-wrap: wrap; gap: 6px 12px; }
+  .ticker-wrap { max-width: 100%; }
 }
 
 @media (max-width: 640px) {
@@ -2097,11 +2105,19 @@ ul.plain li::before { content:'–'; position:absolute; left:0; color:var(--text
   height: 30px;
   overflow: visible;
 }
-/* Logo image — SVG uses currentColor, adapts automatically to dark/light */
+/* Logo image — dark.svg shown in dark mode, light.svg in light mode */
 .brand-logo-img {
   display: block;
-  color: var(--text);
+  width: 44px;
+  height: 30px;
+  object-fit: contain;
 }
+/* dark mode: show dark logo, hide light logo */
+.brand-logo-dark  { display: block; }
+.brand-logo-light { display: none; }
+/* light mode: swap */
+[data-theme="light"] .brand-logo-dark  { display: none; }
+[data-theme="light"] .brand-logo-light { display: block; }
 
 /* Matrix canvas — same opacity in both modes */
 [data-theme="light"] #matrix-canvas { opacity: 0.22; }
